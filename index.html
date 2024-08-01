@@ -2,15 +2,229 @@
 <html lang="en">
 
 <head>
+    <title>Aktiv Generation Uppsala</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 
 <body>
-    <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSc8Ek0QaqbNaVGkTYv6GFMlGZ0-q6AFmmis80amMCYmDI5JWg/viewform?embedded=true"
-        width=100% height="1442" frameborder="0" marginheight="0" marginwidth="0">
-        Loading…
-    </iframe>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#"><img src="images/logo.png" id="logo" alt="logo"></a></div>
+            <ul class="menu">
+                <li><a href="#" class="menu-btn">Hem</a></li>
+                <li><a href="#Om oss" class="menu-btn">Om oss</a></li>
+                <li><a href="#Vad vi gör" class="menu-btn">Vad vi gör</a></li>
+                <li><a href="#Aktiviteter" class="menu-btn">Aktiviteter</a></li>
+                <li><a href="#Bildgalleri" class="menu-btn">Bildgalleri</a></li>
+                <li><a href="#Kontakt" class="menu-btn">Kontakt</a></li>
+                <li><a href="https://forms.gle/sfEatWLa9RC6eEE67" id="outbound-link" class="menu-btn" target="_blank"
+                        rel="noopener noreferrer">Bli medlem</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- home section start -->
+    <section class="home" id="hem">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-2">Aktiv Generation Uppsala</div>
+                <div class="text-3">Förenade för att bygga broar mellan generationer och kulturer i Uppsala</div>
+                <a href="#Om oss">Om oss</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section start -->
+    <section class="skills" id="Om oss">
+        <div class="max-width">
+            <h2 class="title">Om oss</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text">Vem är vi?</div>
+                    <p>Aktiv Generation Uppsala är en ideell och politiskt obunden förening som främjar barns och ungas
+                        utveckling genom att skapa en inkluderande och stödjande gemenskap. Vi erbjuder mötesplatser och
+                        aktiviteter där unga kan dela med sig av sina erfarenheter, utveckla sig själva och stötta yngre
+                        generationer. Genom våra olika aktiviteter arbetar vi för att främja samarbeten mellan barn,
+                        mentorer och familjer samt främja socialt ansvar, miljö- och humanitärt bistånd och kulturell
+                        förståelse.</p>
+                </div>
+                <div class="column right">
+                    <img src="images/om-oss.jpeg" alt="om-oss">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- pillars section start -->
+    <section class="services" id="Vad vi gör">
+        <div class="max-width">
+            <h2 class="title">Vad vi gör</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-user-friends"></i>
+                        <div class="text">Mentorskap</div>
+                        <p>Ungdomar delar sina erfarenheter från sociala, fysiska, psykiska och emotionella utveckling
+                            med yngre barn.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-hiking"></i>
+                        <div class="text">Aktiviteter</div>
+                        <p>Inomhus- och utomhusaktiviteter som sport, turneringar, utflykter och picknick för att främja
+                            en aktiv och hälsosam livsstil.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <div class="text">Socialt Ansvar</div>
+                        <p>Deltagande i projekt för socialt ansvar, miljö- och humanitärt bistånd i Sverige och runt om
+                            i världen.</p><br>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-star-and-crescent"></i>
+                        <div class="text">Kulturförståelse</div>
+                        <p>Aktiviteter för att främja kulturell interaktion och öppna upp möjligheter för dialog med
+                            olika kulturer i Sverige.</p><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- activities section start -->
+    <section class="about" id="Aktiviteter">
+        <div class="max-width">
+            <h2 class="title">Aktiviteter</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KjcQBm7rAS8?si=xaN7rpIC2Ej1uqX3"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="column right">
+                    <p>Hos Aktiv Generation Uppsala stödjer vi barn och unga genom en rad aktiviteter. Vi arrangerar
+                        seminarier, workshops, och utbildningar för att främja lärande och erfarenhetsutbyte. Våra
+                        sociala och utomhusaktiviteter främjar starkare relationer mellan barn, mentorer och familjer.
+                        Genom projekt inom socialt ansvar, miljö och humanitärt bistånd skapar vi en positiv inverkan.
+                        Kom och upplev hur vi förenar generationer och kulturer i Uppsala.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- gallery section start -->
+    <section class="about" id="Bildgalleri">
+        <div class="container swiper max-width">
+            <h2 class="title">Bildgalleri</h2>
+            <div class="slider-wrapper">
+                <div class="card-list swiper-wrapper">
+                    <div class="card-item swiper-slide">
+                        <img src="images/aktivitet-1.JPG" alt="aktivitet">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/musik.jpeg" alt="musik">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/gåva-2.JPG" alt="gåva">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/kahoot.jpeg" alt="gåva">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/aktivitet-2.JPG" alt="aktivitet">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/fika.jpeg" alt="fika">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/gåva-1.JPG" alt="gåva">
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section start -->
+    <section class="contact" id="Kontakt">
+        <div class="max-width">
+            <h2 class="title">Kontakt</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Hör av dig!</div>
+                    <p>Om du har frågor kring vår förening och verksamhet, tveka inte att kontakta oss.</p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info" id="visit-us">
+                                <div class="head">Besök oss</div>
+                                <div class="sub-title">Bandstolsvägen 55, 756 48 Uppsala</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Mejla</div>
+                                <div class="sub-title">info@aktivgeneration.org</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="info">
+                                <div class="head">Ring</div>
+                                <div class="sub-title">076-950 63 28</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64195.314424638884!2d17.494217462499993!3d59.814199099999975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465fcb24dcbcbe8b%3A0xcb2ed3c01a34a614!2sAktiv%20Generation%20Uppsala!5e0!3m2!1sen!2sse!4v1721917341976!5m2!1sen!2sse"
+                        width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section start -->
+    <footer>
+        <span>Created by <a href="https://forms.gle/sfEatWLa9RC6eEE67" target="_blank" rel="noopener noreferrer">Aktiv
+                Generation Uppsala</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</span>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="swiperScript.js"></script>
 </body>
 
 </html>
