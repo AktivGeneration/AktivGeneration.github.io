@@ -497,9 +497,22 @@ section .title {
 /* footer section styling */
 footer {
     background: #111;
-    padding: 40px 23px;
+    padding: 20px 23px 40px 23px;
     color: #fff;
     text-align: center;
+}
+
+footer .social {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .social .fab {
+    padding: 0 10px;
+    color: #fff;
+    font-size: 20px;
 }
 
 footer span a {
