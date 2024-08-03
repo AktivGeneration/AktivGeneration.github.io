@@ -200,7 +200,7 @@ section .title {
 .home {
     display: flex;
     background: url("images/background.png") no-repeat center;
-    box-shadow: 0 3000px rgba(77, 76, 75, 0.568) inset;
+    box-shadow: 0 3000px rgba(72, 69, 66, 0.543) inset;
     min-height: 100vh;
     color: white;
     background-size: cover;
