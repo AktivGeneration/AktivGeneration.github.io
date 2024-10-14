@@ -34,4 +34,34 @@ $(document).ready(function () {
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
+
+    // Code to dynamically add the gallery images
+    const images = [
+        { src: "images/stenhagen-fest-1.jpg", alt: "kulturfest-tält-och-kanvas" },
+        { src: "images/musik.jpeg", alt: "musik" },
+        { src: "images/bordtennis-1.jpg", alt: "bordtennis" },
+        { src: "images/håll-uppsala-rent-1.jpeg", alt: "plocka-skräp-dag" },
+        { src: "images/aktivitet.JPG", alt: "aktivitet" },
+        { src: "images/stenhagen-fest-3.jpeg", alt: "kulturfest-spel-med-barn" },
+        { src: "images/gruppaktivitet.jpeg", alt: "gruppaktivitet" },
+        { src: "images/gåva.JPG", alt: "gåva" },
+        { src: "images/stenhagen-fest-2.jpg", alt: "kulturfest-tält-och-banner" },
+        { src: "images/fika.jpeg", alt: "fika" },
+        { src: "images/bordtennis-2.jpg", alt: "bordtennis" },
+        { src: "images/håll-uppsala-rent-2.jpeg", alt: "plocka-skräp-dag-planering" }
+    ];
+
+    const galleryContainer = document.getElementById('gallery-images');
+
+    images.forEach(image => {
+        const cardItem = document.createElement('div');
+        cardItem.className = 'card-item swiper-slide';
+
+        const imgElement = document.createElement('img');
+        imgElement.src = image.src;
+        imgElement.alt = image.alt;
+
+        cardItem.appendChild(imgElement);
+        galleryContainer.appendChild(cardItem);
+    });
 });
