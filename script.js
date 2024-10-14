@@ -42,7 +42,7 @@ $(document).ready(function () {
         { src: "images/bordtennis-1.jpg", alt: "bordtennis" },
         { src: "images/håll-uppsala-rent-1.jpeg", alt: "plocka-skräp-dag" },
         { src: "images/aktivitet.JPG", alt: "aktivitet" },
-        { src: "images/stenhagen-fest-3.jpeg", alt: "kulturfest-spel-med-barn" },
+        { src: "images/stenhagen-fest-3.JPEG", alt: "kulturfest-spel-med-barn" },
         { src: "images/gruppaktivitet.jpeg", alt: "gruppaktivitet" },
         { src: "images/gåva.JPG", alt: "gåva" },
         { src: "images/stenhagen-fest-2.jpg", alt: "kulturfest-tält-och-banner" },
