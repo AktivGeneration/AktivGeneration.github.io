@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    screen.orientation.lock('portrait');
     $(window).scroll(function () {
         // sticky navbar on scroll script
         if (this.scrollY > 20) {
