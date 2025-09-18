@@ -35,6 +35,19 @@ $(document).ready(function () {
         $('.menu-btn i').toggleClass("active");
     });
 
+    // language dropdown toggle
+    const $languageSelector = $('.language-selector');
+    $languageSelector.on('click', '> a', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $languageSelector.toggleClass('open');
+    });
+
+    // close language dropdown on outside click
+    $(document).on('click', function () {
+        $languageSelector.removeClass('open');
+    });
+
     // Code to dynamically add the gallery images
     const images = [
         { src: "images/stenhagen-fest-1.jpg", alt: "kulturfest-tält-och-kanvas" },
