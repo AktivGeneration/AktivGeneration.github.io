@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 
@@ -62,33 +63,44 @@
         </div>
     </nav>
 
-    <section class="about" id="aktiviteter-list">
+    
+
+    <!-- Sample activity with gallery -->
+    <section class="about" id="aktivitet-1">
         <div class="max-width">
-            <h2 class="title">Aktiviteter</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <p>
-                        Här samlar vi exempel på våra återkommande och kommande aktiviteter.
-                        Följ oss på
-                        <a href="https://www.instagram.com/aktiv.generation/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        och
-                        <a href="https://www.facebook.com/people/Aktiv-Generation/61560370167146/" target="_blank" rel="noopener noreferrer">Facebook</a>
-                        för senaste nytt.
-                    </p>
-                    <ul style="margin-top:15px;">
-                        <li>• Sport och turneringar (bordtennis, fotboll)</li>
-                        <li>• Utomhusaktiviteter och utflykter</li>
-                        <li>• Workshops och utbildningar</li>
-                        <li>• Projekt för socialt ansvar och miljö</li>
-                    </ul>
+            <h2 class="title" style="font-size:28px; text-align:left;">Vårstädning i Stenhagen</h2>
+            <p style="text-align:left; margin: 6px 0 14px 0; color:#555;">Datum: 2024-04-20</p>
+
+            
+
+                <!-- gallery section start -->
+    <section class="about" id="bildgalleri">
+        <div class="container swiper max-width">
+            <h2 class="title">Bildgalleri</h2>
+            <div class="slider-wrapper">
+                <div class="card-list swiper-wrapper">
+                    <div class="card-item swiper-slide">
+                        <img src="images/stenhagen-fest-1.jpg" alt="Stenhagen fest 1">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/stenhagen-fest-2.jpg" alt="Stenhagen fest 2">
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="images/stenhagen-fest-3.JPEG" alt="Stenhagen fest 3">
+                    </div>
                 </div>
-                <div class="column right">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PIYXl21dMzk?si=-bRDMdR1Gs8YjVCC"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
             </div>
+        </div>
+    </section>
+
+            <p style="text-align:left;">
+                Tillsammans med barn, unga och föräldrar samlades vi i Stenhagen för att hålla området rent och fint.
+                Dagen bjöd på gemenskap, fika och lärorika samtal om miljöansvar. Tack till alla som deltog och bidrog!
+            </p>
         </div>
     </section>
 
@@ -109,6 +121,12 @@
     </footer>
 
     <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="swiperScript.js"></script>
+
+
+
+
 </body>
 
 </html>
