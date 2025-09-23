@@ -121,9 +121,9 @@ $(document).ready(function () {
         const activityGalleries = {
             'gallery-2-images': [
                 { src: 'images/tennis-1.JPG', alt: 'Bordtennis 1' },
-                { src: 'images/tennis-2.JPG', alt: 'Bordtennis 2' },
-                { src: 'images/tennis-3.JPG', alt: 'Bordtennis 3' },
-                { src: 'images/tennis-4.JPG', alt: 'Bordtennis 4' }
+                { src: 'images/tennis-2.jpg', alt: 'Bordtennis 2' },
+                { src: 'images/tennis-3.jpg', alt: 'Bordtennis 3' },
+                { src: 'images/tennis-4.jpg', alt: 'Bordtennis 4' }
             ],
             'gallery-3-images': [
                 { src: 'images/rent-uppsala-1.jpeg', alt: 'Håll Uppsala Rent 1' },
