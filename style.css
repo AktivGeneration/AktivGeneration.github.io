@@ -16,6 +16,11 @@ body {
     background-color: #f1f1f1;
 }
 
+/* prevent background scroll when mobile menu is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* custom scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -656,7 +661,7 @@ footer span a:hover {
         top: 0;
         background: #f1f1f1;
         text-align: center;
-        padding-top: 20px;
+        padding-top: 100px; /* greater top padding for safe-area and sticky header */
         transition: all 0.3s ease;
     }
 
@@ -684,8 +689,9 @@ footer span a:hover {
 
     .navbar .menu li a {
         display: inline-block;
-        margin: 10px 0;
-        font-size: 25px;
+        margin: 14px 0;
+        font-size: 22px;
+        padding: 10px 16px;
     }
 
     .nightmode-label-mobile {

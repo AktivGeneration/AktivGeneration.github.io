@@ -25,12 +25,17 @@ $(document).ready(function () {
     $('.navbar .menu li a').click(function () {
         // applying again smooth scroll on menu items click
         $('html').css("scrollBehavior", "smooth");
+        // close mobile menu on link click
+        $('.navbar .menu').removeClass('active');
+        $('.menu-btn i').removeClass('active');
+        $('body').removeClass('no-scroll');
     });
 
     // toggle menu/navbar script
     $('.menu-btn').click(function () {
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
+        $('body').toggleClass('no-scroll');
     });
 
     // language dropdown toggle
@@ -62,6 +67,14 @@ $(document).ready(function () {
             $('.menu-btn').off('click').on('click', function () {
                 $('.navbar .menu').toggleClass("active");
                 $('.menu-btn i').toggleClass("active");
+                $('body').toggleClass('no-scroll');
+            });
+
+            // close menu when a nav link is clicked (after injection)
+            $('.navbar .menu li a').off('click.close').on('click.close', function () {
+                $('.navbar .menu').removeClass('active');
+                $('.menu-btn i').removeClass('active');
+                $('body').removeClass('no-scroll');
             });
 
         // Adjust internal anchors on aktiviteter.html and cookies.html to point back to index sections
