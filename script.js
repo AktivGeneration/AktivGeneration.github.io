@@ -48,6 +48,44 @@ $(document).ready(function () {
         $languageSelector.removeClass('open');
     });
 
+    // Load navbar and footer partials
+    (async function loadPartials() {
+        try {
+            const navbarRes = await fetch('navbar.html');
+            const footerRes = await fetch('footer.html');
+            const navbarHtml = await navbarRes.text();
+            const footerHtml = await footerRes.text();
+            const navbarEl = document.getElementById('navbar');
+            const footerEl = document.getElementById('footer');
+            if (navbarEl) navbarEl.innerHTML = navbarHtml;
+            if (footerEl) footerEl.innerHTML = footerHtml;
+
+            // Re-bind navbar interactions after injection
+            $('.menu-btn').off('click').on('click', function () {
+                $('.navbar .menu').toggleClass("active");
+                $('.menu-btn i').toggleClass("active");
+            });
+
+            // Adjust internal anchors on aktiviteter.html to point back to index sections
+            if (location.pathname.toLowerCase().includes('aktiviteter.html')) {
+                const map = new Map([
+                    ['#hem', 'index.html#hem'],
+                    ['#om-oss', 'index.html#om-oss'],
+                    ['#vad-vi-gor', 'index.html#vad-vi-gor'],
+                    ['#aktiviteter', 'index.html#aktiviteter'],
+                    ['#bildgalleri', 'index.html#bildgalleri'],
+                    ['#kontakt', 'index.html#kontakt']
+                ]);
+                $('.navbar .menu a').each(function () {
+                    const href = $(this).attr('href');
+                    if (map.has(href)) $(this).attr('href', map.get(href));
+                });
+            }
+        } catch (e) {
+            console.error('Failed to load partials', e);
+        }
+    })();
+
     // Code to dynamically add the gallery images
     const images = [
         { src: "images/stenhagen-fest-1.jpg", alt: "kulturfest-tält-och-kanvas" },

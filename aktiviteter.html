@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 </head>
 
 <body>
@@ -22,56 +25,17 @@
         <i class="fas fa-angle-up"></i>
     </div>
 
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="logo">
-                <a href="index.html#hem">
-                    <img src="images/logo.png" id="logo" alt="Aktiv Generation Logo">
-                </a>
-            </div>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="menu">
-                <li><a href="index.html#hem" class="menu-btn">Hem</a></li>
-                <li><a href="index.html#om-oss" class="menu-btn">Om oss</a></li>
-                <li><a href="index.html#vad-vi-gor" class="menu-btn">Vad vi gör</a></li>
-                <li><a href="index.html#aktiviteter" class="menu-btn">Aktiviteter</a></li>
-                <li><a href="aktiviteter.html" class="menu-btn">Aktiviteter (sida)</a></li>
-                <li><a href="index.html#bildgalleri" class="menu-btn">Bildgalleri</a></li>
-                <li><a href="index.html#kontakt" class="menu-btn">Kontakt</a></li>
-                <li class="language-selector">
-                    <a href="#" class="menu-btn">
-                        <i class="fas fa-globe"></i> Språk
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <ul class="language-dropdown">
-                        <li><a href="#">Svenska</a></li>
-                        <li><a href="#">Türkçe</a></li>
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">العربية</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://forms.gle/sfEatWLa9RC6eEE67" id="outbound-link" class="menu-btn" target="_blank" rel="noopener noreferrer">Bli medlem</a></li>
-                <li>
-                    <a href="#" id="night-mode-toggle" class="menu-btn">
-                        <i class="fas fa-moon"></i>
-                        <span class="nightmode-label-mobile">Nattläge</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="navbar"></div>
 
     <main class="content max-width">
 
-        <!-- Aktivitet 1 -->
-        <section class="about activity" id="aktivitet-1">
+        <!-- Aktivitet 2 -->
+        <section class="about activity" id="aktivitet-2">
             <h2 class="title" style="font-size:28px; text-align:left;"><br><br>Bordtennis</h2>
             <p style="text-align:left; margin: 6px 0 14px 0; color:#555;">Datum: 2024-09-13</p>
 
-            <!-- gallery for aktivitet 1 -->
-            <section class="gallery" id="gallery-1">
+            <!-- gallery for aktivitet 2 -->
+            <section class="gallery" id="gallery-2">
                 <div class="container swiper">
                     <div class="slider-wrapper">
                         <div class="card-list swiper-wrapper">
@@ -103,13 +67,13 @@
             </p>
         </section>
 
-        <!-- Aktivitet 2 -->
-        <section class="about activity" id="aktivitet-2">
+        <!-- Aktivitet 3 -->
+        <section class="about activity" id="aktivitet-3">
             <h2 class="title" style="font-size:28px; text-align:left;">Håll Uppsala Rent</h2>
             <p style="text-align:left; margin: 6px 0 14px 0; color:#555;">Datum: 2024-09-21</p>
 
-            <!-- gallery for aktivitet 2 -->
-            <section class="gallery" id="gallery-2">
+            <!-- gallery for aktivitet 3 -->
+            <section class="gallery" id="gallery-3">
                 <div class="container swiper">
                     <div class="slider-wrapper">
                         <div class="card-list swiper-wrapper">
@@ -150,7 +114,7 @@
             </p>
         </section>
 
-        <!-- Aktivitet 3 -->
+        <!-- Aktivitet 43 -->
         <section class="about activity" id="aktivitet-3">
             <h2 class="title" style="font-size:28px; text-align:left;">Statsdelsfest för Föreningar</h2>
             <p style="text-align:left; margin: 6px 0 14px 0; color:#555;">Datum: 2024-10-05</p>
@@ -353,6 +317,7 @@
     </p>
 
 
+    
         <!-- Aktivitet 7 -->
         <section class="about activity" id="aktivitet-7">
             <h2 class="title" style="font-size:28px; text-align:left;">Leos Lekland dag med Junis</h2>
@@ -380,6 +345,7 @@
         en fantastisk dag på Leos Lekland fylld med lek, skratt och gemenskap. Detta markerar starten på
         ett värdefullt samarbete där vi tillsammans skapar meningsfulla och glädjefyllda stunder för barnen.
     </p>
+
 
 
         <!-- Aktivitet 8 -->
@@ -422,8 +388,8 @@
 
             <!-- Aktivitet 9 -->
             <section class="about activity" id="aktivitet-9">
-                <h2 class="title" style="font-size:28px; text-align:left;">Håll Uppsala Rent-(Del 2)</h2>
-                <p style="text-align:left; margin: 6px 0 14px 0; color:#555;">Datum: 2025-09-22</p>
+                <h2 class="title" style="font-size:28px; text-align:left;">Tekniska Museet</h2>
+                <p style="text-align:left; margin: 6px 0 14px 0; color:#555;">Datum: 2025-04-21</p>
     
                 <!-- gallery for aktivitet 9 -->
                 <section class="gallery" id="gallery-9">
@@ -431,16 +397,16 @@
                         <div class="slider-wrapper">
                             <div class="card-list swiper-wrapper">
                                 <div class="card-item swiper-slide">
-                                    <img src="images/rengör-uppsala-1.jpg" alt="Rengör Uppsala vol2 1">
+                                    <img src="images/tekniska-museet-1.jpg" alt="Tekniska Museet 1">
                                 </div>  
                                 <div class="card-item swiper-slide">
-                                    <img src="images/rengör-uppsala-2.jpg" alt="Rengör Uppsala vol2 2">
+                                    <img src="images/tekniska-museet-2.jpg" alt="Tekniska Museet 2">
                                 </div>  
                                 <div class="card-item swiper-slide">
-                                    <img src="images/rengör-uppsala-3.jpg" alt="Rengör Uppsala vol2 3">
+                                    <img src="images/tekniska-museet-3.jpg" alt="Tekniska Museet 3">
                                 </div>  
                                 <div class="card-item swiper-slide">
-                                    <img src="images/rengör-uppsala-4.JPG" alt="Rengör Uppsala vol2 4">
+                                    <img src="images/tekniska-museet-4.JPG" alt="Tekniska Museet 4">
                                 </div>  
                             </div>
     
@@ -450,36 +416,15 @@
                         </div>
                     </div>
                 </section>
-    
         <p style="text-align:left;">
-            Vi träffades vid Stadsträdgården i Uppsala och delade in oss i fem grupper enligt kartan för att samla in skräp.
-            En reporter från P4 Norra Uppland var på plats och intervjuade syskonen Seher och Sanya från vår grupp. 
-            Det var en givande dag där vi tillsammans gjorde en insats för miljön. Och vi har fikat efter aktivitet med deltagarna.
+            Vi genomförde ett uppskattat besök på Tekniska Museet, där deltagarna fick utforska inspirerande utställningar.
+            Besöket inkluderade även visningar av Wisdome-filmer som "OpenSpace" och "STORT Junior", vilka bjöd på fascinerande
+            rymdupplevelser för både barn och vuxna.
         </p>
-
-
-</section>
-
-
-
-
+                </section>
     </main>
 
-    <footer>
-        <div class="social">
-            <a href="https://www.facebook.com/people/Aktiv-Generation/61560370167146/" target="_blank" rel="noopener noreferrer">
-                <div class="fab fa-facebook-f"></div>
-            </a>
-            <a href="https://www.instagram.com/aktiv.generation/" target="_blank" rel="noopener noreferrer">
-                <div class="fab fa-instagram"></div>
-            </a>
-            <a href="https://www.youtube.com/channel/UCYrLsTm2InlKeWk0T0662rA" target="_blank" rel="noopener noreferrer">
-                <div class="fab fa-youtube"></div>
-            </a>
-        </div>
-        <span>Created by <a href="https://forms.gle/sfEatWLa9RC6eEE67" target="_blank" rel="noopener noreferrer">Aktiv
-                Generation Uppsala</a> | &copy; 2024 All rights reserved.</span>
-    </footer>
+    <div id="footer"></div>
 
     <script type="text/javascript" src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
