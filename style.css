@@ -732,6 +732,15 @@ footer span a:hover {
         flex: 100%;
     }
 
+    /* Ensure press media stacks above text like Om oss */
+    .about#aktiviteter .about-content {
+        flex-direction: column;
+    }
+    .about#aktiviteter .about-content .column.left,
+    .about#aktiviteter .about-content .column.right {
+        width: 100%;
+    }
+
     .skills .skills-content .column,
     .contact .contact-content .column {
         width: 100%;
