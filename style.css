@@ -866,5 +866,100 @@ footer span a:hover {
     .about .about-content .right p {
         text-align: justify;
         font-size: 16px;
-    }
+    }   
+}
+/* Cookies page specific styles */
+/* Cookies page specific styles */
+body { 
+    background-color: #ffffff !important; 
+}
+
+.cookies-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif; /* Add this line */
+}
+
+.cookies-content h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif; /* Add this line to match section titles */
+}
+
+.last-updated {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-size: 1rem; /* Add consistent font size */
+}
+
+.cookies-content section {
+    margin-bottom: 40px;
+}
+
+.cookies-content h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif; /* Match your section styling */
+}
+
+.cookies-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 17px; /* Match your existing paragraph font size */
+}
+
+.cookies-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.cookies-content li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-size: 17px; /* Match paragraph font size */
+}
+
+.cookies-content a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+.cookies-content a:hover {
+    text-decoration: underline;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1abc9c;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #16a085;
+    transform: translateY(-3px);
 }
