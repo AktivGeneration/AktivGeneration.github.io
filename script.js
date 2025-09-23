@@ -65,7 +65,10 @@ $(document).ready(function () {
             });
 
         // Adjust internal anchors on aktiviteter.html and cookies.html to point back to index sections
-        if (location.pathname.toLowerCase().includes('aktiviteter.html') || location.pathname.toLowerCase().includes('cookies.html')) {
+        // Adjust internal anchors on aktiviteter.html, cookies.html and integritetspolicy.html to point back to index sections
+        if (location.pathname.toLowerCase().includes('aktiviteter.html') 
+            ||location.pathname.toLowerCase().includes('cookies.html') 
+            ||location.pathname.toLowerCase().includes('privacy_policy.html')) {
             const map = new Map([
                 ['#hem', 'index.html#hem'],
                 ['#om-oss', 'index.html#om-oss'],
