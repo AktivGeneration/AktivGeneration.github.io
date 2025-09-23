@@ -173,6 +173,12 @@ $(document).ready(function () {
                 { src: 'images/tekniska-museet-2.jpg', alt: 'Tekniska Museet 2' },
                 { src: 'images/tekniska-museet-3.jpg', alt: 'Tekniska Museet 3' },
                 { src: 'images/tekniska-museet-4.JPG', alt: 'Tekniska Museet 4' }
+            ],
+            'gallery-9-images': [
+                { src: 'images/rengör-uppsala-1.jpg', alt: 'Rengör Uppsala del2 1' },
+                { src: 'images/rengör-uppsala-2.jpg', alt: 'Rengör Uppsala del2 2' },
+                { src: 'images/rengör-uppsala-3.jpg', alt: 'Rengör Uppsala del2 3' },
+                { src: 'images/rengör-uppsala-4.jpg', alt: 'Rengör Uppsala del2 4' }
             ]
         };
 
