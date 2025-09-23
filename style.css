@@ -427,6 +427,10 @@ section .title {
     text-align: center;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
 .skills .skills-content .right img {
     height: 360px;
     width: 360px;
