@@ -429,6 +429,7 @@ section .title {
 
 .justify-text {
     text-align: justify;
+    margin: 10px;
 }
 
 .skills .skills-content .right img {
