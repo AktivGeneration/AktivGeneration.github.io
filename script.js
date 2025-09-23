@@ -2,11 +2,9 @@ $(document).ready(function () {
     $(window).scroll(function () {
         // sticky navbar on scroll script
         if (this.scrollY > 20) {
-            document.body.style.backgroundColor = "#f0945f";
             $('.navbar').addClass("sticky");
         } else {
             $('.navbar').removeClass("sticky");
-            document.body.style.backgroundColor = "#f1f1f1";
         }
 
         // scroll-up button show/hide script
