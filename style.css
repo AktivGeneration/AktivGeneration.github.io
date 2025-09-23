@@ -739,8 +739,9 @@ footer span a:hover {
     }
 
     .about .about-content .left iframe {
-        width: 560px;
-        height: 315px;
+        width: 100% !important;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }
 
@@ -765,6 +766,20 @@ footer span a:hover {
     .home .home-content .text-3 {
         margin-top: 20px;
         font-size: 40px;
+    }
+
+    /* Press section media: make iframe and image fully responsive */
+    .about#aktiviteter .about-content .left iframe {
+        width: 100% !important;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        display: block;
+    }
+    .about#aktiviteter .about-content .left a img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        display: block;
     }
 }
 
@@ -793,6 +808,12 @@ footer span a:hover {
         height: 300px;
         width: 300px;
         margin: 0;
+    }
+
+    /* Extra small: ensure no horizontal overflow in press section */
+    .about#aktiviteter .max-width {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
