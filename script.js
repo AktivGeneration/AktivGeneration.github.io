@@ -64,21 +64,21 @@ $(document).ready(function () {
                 $('.menu-btn i').toggleClass("active");
             });
 
-            // Adjust internal anchors on aktiviteter.html to point back to index sections
-            if (location.pathname.toLowerCase().includes('aktiviteter.html')) {
-                const map = new Map([
-                    ['#hem', 'index.html#hem'],
-                    ['#om-oss', 'index.html#om-oss'],
-                    ['#vad-vi-gor', 'index.html#vad-vi-gor'],
-                    ['#aktiviteter', 'index.html#aktiviteter'],
-                    ['#bildgalleri', 'index.html#bildgalleri'],
-                    ['#kontakt', 'index.html#kontakt']
-                ]);
-                $('.navbar .menu a').each(function () {
-                    const href = $(this).attr('href');
-                    if (map.has(href)) $(this).attr('href', map.get(href));
-                });
-            }
+        // Adjust internal anchors on aktiviteter.html and cookies.html to point back to index sections
+        if (location.pathname.toLowerCase().includes('aktiviteter.html') || location.pathname.toLowerCase().includes('cookies.html')) {
+            const map = new Map([
+                ['#hem', 'index.html#hem'],
+                ['#om-oss', 'index.html#om-oss'],
+                ['#vad-vi-gor', 'index.html#vad-vi-gor'],
+                ['#aktiviteter', 'index.html#aktiviteter'],
+                ['#bildgalleri', 'index.html#bildgalleri'],
+                ['#kontakt', 'index.html#kontakt']
+            ]);
+            $('.navbar .menu a').each(function () {
+                const href = $(this).attr('href');
+                if (map.has(href)) $(this).attr('href', map.get(href));
+            });
+        }
         } catch (e) {
             console.error('Failed to load partials', e);
         }
