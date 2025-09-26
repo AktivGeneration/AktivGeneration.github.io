@@ -399,6 +399,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (phoneLink) {
         phoneLink.addEventListener('click', function(e) {
             e.preventDefault();
+            // Close email options if open
+            const emailOptions = document.getElementById('emailOptions');
+            if (emailOptions) emailOptions.style.display = 'none';
+            
             phoneOptions.style.display = phoneOptions.style.display === 'block' ? 'none' : 'block';
         });
     }
@@ -408,6 +412,21 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const phoneNumber = '+46-76 950 63 28';
             navigator.clipboard.writeText(phoneNumber).then(function() {
+                phoneCopyNotification.textContent = 'Telefonnummer kopierat!';
+                phoneCopyNotification.style.display = 'block';
+                setTimeout(function() {
+                    phoneCopyNotification.style.display = 'none';
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = phoneNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                phoneCopyNotification.textContent = 'Telefonnummer kopierat!';
                 phoneCopyNotification.style.display = 'block';
                 setTimeout(function() {
                     phoneCopyNotification.style.display = 'none';
@@ -420,14 +439,47 @@ document.addEventListener('DOMContentLoaded', function() {
     if (callPhone) {
         callPhone.addEventListener('click', function(e) {
             e.preventDefault();
-            const phoneNumber = '+46769506328'; // Remove dashes for calling
+            const phoneNumber = formatPhoneNumber('+46-76 950 63 28'); // Properly formatted
+            
             if (isMobileDevice()) {
-                // For mobile devices - initiate call
-                window.location.href = `tel:${phoneNumber}`;
+                // Create a temporary link for better iOS support
+                const telLink = document.createElement('a');
+                telLink.href = `tel:${phoneNumber}`;
+                telLink.style.display = 'none';
+                document.body.appendChild(telLink);
+                
+                // Try multiple methods for maximum compatibility
+                const tryCall = function(attempt) {
+                    try {
+                        if (attempt === 1) {
+                            // Method 1: Direct click
+                            telLink.click();
+                        } else if (attempt === 2) {
+                            // Method 2: Window location
+                            window.location.href = `tel:${phoneNumber}`;
+                        } else if (attempt === 3) {
+                            // Method 3: Open in new window (for some Android devices)
+                            window.open(`tel:${phoneNumber}`, '_self');
+                        }
+                    } catch (error) {
+                        console.log('Call attempt failed:', attempt, error);
+                    }
+                };
+                
+                // Try multiple methods with delays
+                tryCall(1);
+                setTimeout(() => tryCall(2), 50);
+                setTimeout(() => tryCall(3), 100);
+                
+                // Clean up
+                setTimeout(() => {
+                    document.body.removeChild(telLink);
+                }, 500);
+                
             } else {
-                // For desktop - show message or copy number
+                // Desktop behavior
                 navigator.clipboard.writeText(phoneNumber).then(function() {
-                    phoneCopyNotification.textContent = 'Telefonnummer kopierat! (Anrop inte tillgängligt på desktop)';
+                    phoneCopyNotification.textContent = 'Telefonnummer kopierat! (Ring från din telefon)';
                     phoneCopyNotification.style.display = 'block';
                     setTimeout(function() {
                         phoneCopyNotification.style.display = 'none';
@@ -446,3 +498,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Enhanced mobile detection for better iOS support
+function isMobileDevice() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+    // Check for iOS
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return true;
+    }
+    
+    // Check for Android
+    if (/android/i.test(userAgent)) {
+        return true;
+    }
+    
+    // Check for other mobile devices
+    if (/Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
+        return true;
+    }
+    
+    // Check for touch screen (additional indicator)
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+}
+
+// Enhanced phone number formatting function
+function formatPhoneNumber(phone) {
+    // Remove all non-digit characters except plus
+    return phone.replace(/[^\d+]/g, '');
+}
