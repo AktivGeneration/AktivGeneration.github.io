@@ -213,3 +213,177 @@ $(document).ready(function () {
         });
     }
 });
+
+let serviceOpened = false;
+
+// Detect if device is mobile
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Detect if device is Android
+function isAndroid() {
+    return /Android/i.test(navigator.userAgent);
+}
+
+// Detect if device is iOS
+function isIOS() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const emailLink = document.getElementById('emailLink');
+    const copyEmail = document.getElementById('copyEmail');
+    const autoEmail = document.getElementById('autoEmail');
+    const copyNotification = document.getElementById('copyNotification');
+    const emailOptions = document.getElementById('emailOptions');
+
+    if (emailLink) {
+        emailLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            emailOptions.style.display = emailOptions.style.display === 'block' ? 'none' : 'block';
+        });
+    }
+
+    if (copyEmail) {
+        copyEmail.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = 'info@aktivgeneration.org';
+            navigator.clipboard.writeText(email).then(function() {
+                copyNotification.style.display = 'block';
+                setTimeout(function() {
+                    copyNotification.style.display = 'none';
+                }, 2000);
+            });
+            emailOptions.style.display = 'none';
+        });
+    }
+
+    if (autoEmail) {
+        autoEmail.addEventListener('click', function(e) {
+            e.preventDefault();
+            serviceOpened = false;
+            const email = 'info@aktivgeneration.org';
+            
+            if (isMobileDevice()) {
+                openMobileEmailApp(email);
+            } else {
+                openDesktopEmail(email);
+            }
+            
+            emailOptions.style.display = 'none';
+        });
+    }
+
+    // Close options when clicking elsewhere
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('#emailLink') && !e.target.matches('#emailOptions a')) {
+            emailOptions.style.display = 'none';
+        }
+    });
+});
+
+function openMobileEmailApp(email) {
+    if (isAndroid()) {
+        // Android - Try Gmail app first
+        const gmailAppLink = `intent://compose?to=${email}#Intent;scheme=google.gmail;package=com.google.android.gm;end`;
+        window.location.href = gmailAppLink;
+        
+        setTimeout(function() {
+            if (!serviceOpened) {
+                // If Gmail app fails, try Outlook app
+                const outlookAppLink = `intent://compose?to=${email}#Intent;scheme=ms-outlook;package=com.microsoft.office.outlook;end`;
+                window.location.href = outlookAppLink;
+                
+                setTimeout(function() {
+                    if (!serviceOpened) {
+                        // If Outlook app fails, fallback to regular mailto
+                        window.location.href = `mailto:${email}`;
+                    }
+                }, 500);
+            }
+        }, 500);
+        
+    } else if (isIOS()) {
+        // iOS - Try Gmail app first
+        const gmailAppLink = `googlegmail://co?to=${email}`;
+        window.location.href = gmailAppLink;
+        
+        setTimeout(function() {
+            if (!serviceOpened) {
+                // If Gmail app fails, try Outlook app
+                const outlookAppLink = `ms-outlook://compose?to=${email}`;
+                window.location.href = outlookAppLink;
+                
+                setTimeout(function() {
+                    if (!serviceOpened) {
+                        // If Outlook app fails, try Apple Mail app
+                        const appleMailLink = `message://${email}`;
+                        window.location.href = appleMailLink;
+                        
+                        setTimeout(function() {
+                            if (!serviceOpened) {
+                                // If all apps fail, fallback to regular mailto
+                                window.location.href = `mailto:${email}`;
+                            }
+                        }, 500);
+                    }
+                }, 500);
+            }
+        }, 500);
+    } else {
+        // Other mobile devices - use regular mailto
+        window.location.href = `mailto:${email}`;
+    }
+}
+
+function openDesktopEmail(email) {
+    // Try default mail client first
+    const mailtoLink = `mailto:${email}`;
+    window.location.href = mailtoLink;
+    
+    // Check if default client opened after a short delay
+    setTimeout(function() {
+        if (!serviceOpened) {
+            // Try Gmail
+            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+            const gmailWindow = window.open(gmailLink, '_blank');
+            
+            // Check if Gmail opened successfully
+            if (gmailWindow && !gmailWindow.closed) {
+                serviceOpened = true;
+                return;
+            }
+        }
+        
+        // Check again after another delay
+        setTimeout(function() {
+            if (!serviceOpened) {
+                // Try Outlook
+                const outlookLink = `https://outlook.live.com/mail/0/deeplink/compose?to=${email}`;
+                const outlookWindow = window.open(outlookLink, '_blank');
+                
+                // Check if Outlook opened successfully
+                if (outlookWindow && !outlookWindow.closed) {
+                    serviceOpened = true;
+                    return;
+                }
+            }
+            
+            // Final check
+            setTimeout(function() {
+                if (!serviceOpened) {
+                    // Try iCloud Mail as last resort
+                    const icloudLink = `https://www.icloud.com/mail/compose?to=${email}`;
+                    window.open(icloudLink, '_blank');
+                }
+            }, 500);
+        }, 500);
+    }, 500);
+}
+
+// Detect if app opened successfully (for mobile)
+window.addEventListener('blur', function() {
+    serviceOpened = true;
+});

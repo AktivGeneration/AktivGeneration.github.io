@@ -186,6 +186,7 @@
                 <div class="column left">
                     <div class="text">Hör av dig!</div>
                     <p>Om du har frågor kring vår förening och verksamhet, tveka inte att kontakta oss.</p>
+                    
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-map-marker-alt"></i>
@@ -194,14 +195,26 @@
                                 <div class="sub-title">August Södermans Väg 60, 756 57 Uppsala</div>
                             </div>
                         </div>
-                        <div class="row">
-                            <i class="fas fa-envelope"></i>
-                            <div class="info">
-                                <div class="head">Mejla</div>
-                                <div class="sub-title">info@aktivgeneration.org</div>
+                    
+                    <div class="row">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <div class="head">Mejla</div>
+                            <div class="sub-title">
+                                <a href="#" id="emailLink">info@aktivgeneration.org</a>
+                                <div id="emailOptions" style="display: none;">
+                                    <a href="#" id="copyEmail">Kopiera e-postadress</a>
+                                    <a href="#" id="autoEmail">Skicka e-post</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
+                    </div>
+
+                    <div id="copyNotification" style="display: none; position: fixed; bottom: 20px; left: 50%;
+                     transform: translateX(-50%); background: #2c3e50; color: white; padding: 10px 20px;
+                      border-radius: 4px;">Email address copied to clipboard!</div>
+                    
+                    <div class="row">
                             <i class="fas fa-phone-alt"></i>
                             <div class="info">
                                 <div class="head">Ring</div>
