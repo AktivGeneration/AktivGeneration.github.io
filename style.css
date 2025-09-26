@@ -1071,3 +1071,61 @@ body {
 .contact .contact-content .info .sub-title {
     position: relative;
 }
+
+/* Phone Link Styling */
+.contact .contact-content .info .sub-title a#phoneLink {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.contact .contact-content .info .sub-title a#phoneLink:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Phone Options Dropdown Styling */
+#phoneOptions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    width: 200px;
+    margin-top: 5px;
+}
+
+#phoneOptions a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #27ae60; /* Light green color */
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#phoneOptions a:hover {
+    background-color: #f5f5f5;
+    color: #219653; /* Darker green on hover */
+}
+
+#phoneOptions a:last-child {
+    border-bottom: none;
+}
+
+/* Phone Copy Notification Styling */
+#phoneCopyNotification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+    font-size: 14px;
+}

@@ -215,12 +215,22 @@
                       border-radius: 4px;">Email address copied to clipboard!</div>
                     
                     <div class="row">
-                            <i class="fas fa-phone-alt"></i>
-                            <div class="info">
-                                <div class="head">Ring</div>
-                                <div class="sub-title">+46-76 950 63 28</div>
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="info">
+                            <div class="head">Ring</div>
+                            <div class="sub-title">
+                                <a href="#" id="phoneLink">+46-76 950 63 28</a>
+                                <div id="phoneOptions" style="display: none;">
+                                    <a href="#" id="copyPhone">Kopiera telefonnummer</a>
+                                    <a href="#" id="callPhone">Ring nummer</a>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div id="phoneCopyNotification" style="display: none; position: fixed; bottom: 20px; left: 50%; 
+                    transform: translateX(-50%); background: #2c3e50; color: white; padding: 10px 20px; border-radius: 4px;
+                    ">Telefonnummer kopierat!</div>
                     </div>
                 </div>
                 <div class="column right">

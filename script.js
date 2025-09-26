@@ -387,3 +387,62 @@ function openDesktopEmail(email) {
 window.addEventListener('blur', function() {
     serviceOpened = true;
 });
+
+// Phone functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneLink = document.getElementById('phoneLink');
+    const copyPhone = document.getElementById('copyPhone');
+    const callPhone = document.getElementById('callPhone');
+    const phoneCopyNotification = document.getElementById('phoneCopyNotification');
+    const phoneOptions = document.getElementById('phoneOptions');
+
+    if (phoneLink) {
+        phoneLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            phoneOptions.style.display = phoneOptions.style.display === 'block' ? 'none' : 'block';
+        });
+    }
+
+    if (copyPhone) {
+        copyPhone.addEventListener('click', function(e) {
+            e.preventDefault();
+            const phoneNumber = '+46-76 950 63 28';
+            navigator.clipboard.writeText(phoneNumber).then(function() {
+                phoneCopyNotification.style.display = 'block';
+                setTimeout(function() {
+                    phoneCopyNotification.style.display = 'none';
+                }, 2000);
+            });
+            phoneOptions.style.display = 'none';
+        });
+    }
+
+    if (callPhone) {
+        callPhone.addEventListener('click', function(e) {
+            e.preventDefault();
+            const phoneNumber = '+46769506328'; // Remove dashes for calling
+            if (isMobileDevice()) {
+                // For mobile devices - initiate call
+                window.location.href = `tel:${phoneNumber}`;
+            } else {
+                // For desktop - show message or copy number
+                navigator.clipboard.writeText(phoneNumber).then(function() {
+                    phoneCopyNotification.textContent = 'Telefonnummer kopierat! (Anrop inte tillgängligt på desktop)';
+                    phoneCopyNotification.style.display = 'block';
+                    setTimeout(function() {
+                        phoneCopyNotification.style.display = 'none';
+                        phoneCopyNotification.textContent = 'Telefonnummer kopierat!';
+                    }, 3000);
+                });
+            }
+            phoneOptions.style.display = 'none';
+        });
+    }
+
+    // Close phone options when clicking elsewhere
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('#phoneLink') && !e.target.matches('#phoneOptions a')) {
+            phoneOptions.style.display = 'none';
+        }
+    });
+});
