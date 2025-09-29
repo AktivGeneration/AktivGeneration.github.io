@@ -140,7 +140,7 @@ $(document).ready(function () {
             ],
             'gallery-3-images': [
                 { src: '../images/rent-uppsala-1.jpeg', alt: 'Håll Uppsala Rent 1' },
-                { src: '../imagesrent-uppsala-2.jpeg', alt: 'Håll Uppsala Rent 2' },
+                { src: '../images/rent-uppsala-2.jpeg', alt: 'Håll Uppsala Rent 2' },
                 { src: '../images/rent-uppsala-3.jpeg', alt: 'Håll Uppsala Rent 3' },
                 { src: '../images/rent-uppsala-4.jpeg', alt: 'Håll Uppsala Rent 4' },
                 { src: '../images/rent-uppsala-5.jpeg', alt: 'Håll Uppsala Rent 5' },
