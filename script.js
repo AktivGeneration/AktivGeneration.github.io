@@ -103,18 +103,18 @@ $(document).ready(function () {
     // Dynamically add gallery images
     if (document.getElementById('gallery-images')) {
         const images = [
-            { src: "images/stenhagen-fest-1.jpg", alt: "kulturfest-tält-och-kanvas" },
-            { src: "images/musik.jpeg", alt: "musik" },
-            { src: "images/bordtennis-1.jpg", alt: "bordtennis" },
-            { src: "images/håll-uppsala-rent-1.jpeg", alt: "plocka-skräp-dag" },
-            { src: "images/aktivitet.JPG", alt: "aktivitet" },
-            { src: "images/stenhagen-fest-3.JPEG", alt: "kulturfest-spel-med-barn" },
-            { src: "images/gruppaktivitet.jpeg", alt: "gruppaktivitet" },
-            { src: "images/gåva.JPG", alt: "gåva" },
-            { src: "images/stenhagen-fest-2.jpg", alt: "kulturfest-tält-och-banner" },
-            { src: "images/fika.jpeg", alt: "fika" },
-            { src: "images/bordtennis-2.jpg", alt: "bordtennis" },
-            { src: "images/håll-uppsala-rent-2.jpeg", alt: "plocka-skräp-dag-planering" }
+            { src: "../images/stenhagen-fest-1.jpg", alt: "kulturfest-tält-och-kanvas" },
+            { src: "../images/musik.jpeg", alt: "musik" },
+            { src: "../images/bordtennis-1.jpg", alt: "bordtennis" },
+            { src: "../images/håll-uppsala-rent-1.jpeg", alt: "plocka-skräp-dag" },
+            { src: "../images/aktivitet.JPG", alt: "aktivitet" },
+            { src: "../images/stenhagen-fest-3.JPEG", alt: "kulturfest-spel-med-barn" },
+            { src: "../images/gruppaktivitet.jpeg", alt: "gruppaktivitet" },
+            { src: "../images/gåva.JPG", alt: "gåva" },
+            { src: "../images/stenhagen-fest-2.jpg", alt: "kulturfest-tält-och-banner" },
+            { src: "../images/fika.jpeg", alt: "fika" },
+            { src: "../images/bordtennis-2.jpg", alt: "bordtennis" },
+            { src: "../images/håll-uppsala-rent-2.jpeg", alt: "plocka-skräp-dag-planering" }
         ];
 
         const galleryContainer = document.getElementById('gallery-images');
@@ -133,68 +133,68 @@ $(document).ready(function () {
     if (location.pathname.toLowerCase().includes('aktiviteter.html')) {
         const activityGalleries = {
             'gallery-2-images': [
-                { src: 'images/tennis-1.JPG', alt: 'Bordtennis 1' },
-                { src: 'images/tennis-2.jpg', alt: 'Bordtennis 2' },
-                { src: 'images/tennis-3.jpg', alt: 'Bordtennis 3' },
-                { src: 'images/tennis-4.jpg', alt: 'Bordtennis 4' }
+                { src: '../images/tennis-1.JPG', alt: 'Bordtennis 1' },
+                { src: '../images/tennis-2.jpg', alt: 'Bordtennis 2' },
+                { src: '../images/tennis-3.jpg', alt: 'Bordtennis 3' },
+                { src: '../images/tennis-4.jpg', alt: 'Bordtennis 4' }
             ],
             'gallery-3-images': [
-                { src: 'images/rent-uppsala-1.jpeg', alt: 'Håll Uppsala Rent 1' },
-                { src: 'images/rent-uppsala-2.jpeg', alt: 'Håll Uppsala Rent 2' },
-                { src: 'images/rent-uppsala-3.jpeg', alt: 'Håll Uppsala Rent 3' },
-                { src: 'images/rent-uppsala-4.jpeg', alt: 'Håll Uppsala Rent 4' },
-                { src: 'images/rent-uppsala-5.jpeg', alt: 'Håll Uppsala Rent 5' },
-                { src: 'images/rent-uppsala-6.jpeg', alt: 'Håll Uppsala Rent 6' },
-                { src: 'images/rent-uppsala-7.jpeg', alt: 'Håll Uppsala Rent 7' }
+                { src: '../images/rent-uppsala-1.jpeg', alt: 'Håll Uppsala Rent 1' },
+                { src: '../imagesrent-uppsala-2.jpeg', alt: 'Håll Uppsala Rent 2' },
+                { src: '../images/rent-uppsala-3.jpeg', alt: 'Håll Uppsala Rent 3' },
+                { src: '../images/rent-uppsala-4.jpeg', alt: 'Håll Uppsala Rent 4' },
+                { src: '../images/rent-uppsala-5.jpeg', alt: 'Håll Uppsala Rent 5' },
+                { src: '../images/rent-uppsala-6.jpeg', alt: 'Håll Uppsala Rent 6' },
+                { src: '../images/rent-uppsala-7.jpeg', alt: 'Håll Uppsala Rent 7' }
             ],
             'gallery-3b-images': [
-                { src: 'images/statsdelsfest-1.jpg', alt: 'Stadsdelsfest 1' },
-                { src: 'images/statsdelsfest-2.jpg', alt: 'Stadsdelsfest 2' },
-                { src: 'images/statsdelsfest-3.jpg', alt: 'Stadsdelsfest 3' },
-                { src: 'images/statsdelsfest-4.jpg', alt: 'Stadsdelsfest 4' },
-                { src: 'images/statsdelsfest-5.jpg', alt: 'Stadsdelsfest 5' },
-                { src: 'images/statsdelsfest-6.jpg', alt: 'Stadsdelsfest 6' },
-                { src: 'images/statsdelsfest-7.jpg', alt: 'Stadsdelsfest 7' }
+                { src: '../images/statsdelsfest-1.jpg', alt: 'Stadsdelsfest 1' },
+                { src: '../images/statsdelsfest-2.jpg', alt: 'Stadsdelsfest 2' },
+                { src: '../images/statsdelsfest-3.jpg', alt: 'Stadsdelsfest 3' },
+                { src: '../images/statsdelsfest-4.jpg', alt: 'Stadsdelsfest 4' },
+                { src: '../images/statsdelsfest-5.jpg', alt: 'Stadsdelsfest 5' },
+                { src: '../images/statsdelsfest-6.jpg', alt: 'Stadsdelsfest 6' },
+                { src: '../images/statsdelsfest-7.jpg', alt: 'Stadsdelsfest 7' }
             ],
             'gallery-4-images': [
-                { src: 'images/pulk-1.jpg', alt: 'Pulka 1' },
-                { src: 'images/pulk-2.jpg', alt: 'Pulka 2' },
-                { src: 'images/pulk-3.jpg', alt: 'Pulka 3' },
-                { src: 'images/pulk-4.jpg', alt: 'Pulka 4' },
-                { src: 'images/pulk-5.jpg', alt: 'Pulka 5' },
-                { src: 'images/pulk-6.jpg', alt: 'Pulka 6' }
+                { src: '../images/pulk-1.jpg', alt: 'Pulka 1' },
+                { src: '../images/pulk-2.jpg', alt: 'Pulka 2' },
+                { src: '../images/pulk-3.jpg', alt: 'Pulka 3' },
+                { src: '../images/pulk-4.jpg', alt: 'Pulka 4' },
+                { src: '../images/pulk-5.jpg', alt: 'Pulka 5' },
+                { src: '../images/pulk-6.jpg', alt: 'Pulka 6' }
             ],
             'gallery-5-images': [
-                { src: 'images/eldre-boende-1.jpg', alt: 'LSS boende 1' },
-                { src: 'images/eldre-boende-2.jpg', alt: 'LSS boende 2' },
-                { src: 'images/eldre-boende-3.jpg', alt: 'LSS boende 3' },
-                { src: 'images/eldre-boende-4.jpg', alt: 'LSS boende 4' },
-                { src: 'images/eldre-boende-5.jpg', alt: 'LSS boende 5' },
-                { src: 'images/eldre-boende-6.jpg', alt: 'LSS boende 6' },
-                { src: 'images/eldre-boende-7.jpg', alt: 'LSS boende 7' },
-                { src: 'images/eldre-boende-8.jpg', alt: 'LSS boende 8' },
-                { src: 'images/eldre-boende-9.jpg', alt: 'LSS boende 9' },
-                { src: 'images/eldre-boende-10.jpg', alt: 'LSS boende 10' }
+                { src: '../images/eldre-boende-1.jpg', alt: 'LSS boende 1' },
+                { src: '../images/eldre-boende-2.jpg', alt: 'LSS boende 2' },
+                { src: '../images/eldre-boende-3.jpg', alt: 'LSS boende 3' },
+                { src: '../images/eldre-boende-4.jpg', alt: 'LSS boende 4' },
+                { src: '../images/eldre-boende-5.jpg', alt: 'LSS boende 5' },
+                { src: '../images/eldre-boende-6.jpg', alt: 'LSS boende 6' },
+                { src: '../images/eldre-boende-7.jpg', alt: 'LSS boende 7' },
+                { src: '../images/eldre-boende-8.jpg', alt: 'LSS boende 8' },
+                { src: '../images/eldre-boende-9.jpg', alt: 'LSS boende 9' },
+                { src: '../images/eldre-boende-10.jpg', alt: 'LSS boende 10' }
             ],
             'gallery-6-images': [
-                { src: 'images/teater-1.jpg', alt: 'Teaterföreställning 1' },
-                { src: 'images/teater-2.jpeg', alt: 'Teaterföreställning 2' },
-                { src: 'images/teater-3.jpeg', alt: 'Teaterföreställning 3' }
+                { src: '../images/teater-1.jpg', alt: 'Teaterföreställning 1' },
+                { src: '../images/teater-2.jpeg', alt: 'Teaterföreställning 2' },
+                { src: '../images/teater-3.jpeg', alt: 'Teaterföreställning 3' }
             ],
             'gallery-7-images': [
-                { src: 'images/lekland.jpg', alt: 'Lekland' }
+                { src: '../images/lekland.jpg', alt: 'Lekland' }
             ],
             'gallery-8-images': [
-                { src: 'images/tekniska-museet-1.jpg', alt: 'Tekniska Museet 1' },
-                { src: 'images/tekniska-museet-2.jpg', alt: 'Tekniska Museet 2' },
-                { src: 'images/tekniska-museet-3.jpg', alt: 'Tekniska Museet 3' },
-                { src: 'images/tekniska-museet-4.JPG', alt: 'Tekniska Museet 4' }
+                { src: '../images/tekniska-museet-1.jpg', alt: 'Tekniska Museet 1' },
+                { src: '../images/tekniska-museet-2.jpg', alt: 'Tekniska Museet 2' },
+                { src: '../images/tekniska-museet-3.jpg', alt: 'Tekniska Museet 3' },
+                { src: '../images/tekniska-museet-4.JPG', alt: 'Tekniska Museet 4' }
             ],
             'gallery-9-images': [
-                { src: 'images/rengör-uppsala-1.jpg', alt: 'Rengör Uppsala del2 1' },
-                { src: 'images/rengör-uppsala-2.jpg', alt: 'Rengör Uppsala del2 2' },
-                { src: 'images/rengör-uppsala-3.jpg', alt: 'Rengör Uppsala del2 3' },
-                { src: 'images/rengör-uppsala-4.jpg', alt: 'Rengör Uppsala del2 4' }
+                { src: '../images/rengör-uppsala-1.jpg', alt: 'Rengör Uppsala del2 1' },
+                { src: '../images/rengör-uppsala-2.jpg', alt: 'Rengör Uppsala del2 2' },
+                { src: '../images/rengör-uppsala-3.jpg', alt: 'Rengör Uppsala del2 3' },
+                { src: '../images/rengör-uppsala-4.jpg', alt: 'Rengör Uppsala del2 4' }
             ]
         };
 
@@ -529,3 +529,57 @@ function formatPhoneNumber(phone) {
     // Remove all non-digit characters except plus
     return phone.replace(/[^\d+]/g, '');
 }
+
+// Language switching functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const languageLinks = document.querySelectorAll('.language-dropdown a[data-lang]');
+    const supportedLangs = ['sv', 'en', 'tr', 'ar']; // Your supported languages
+
+    // Event listener for language selection
+    languageLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedLang = e.target.getAttribute('data-lang');
+            switchLanguage(selectedLang);
+        });
+    });
+
+    function switchLanguage(targetLang) {
+        // Save preference
+        localStorage.setItem('preferredLang', targetLang);
+        
+        // Get current path and filename
+        const currentPath = window.location.pathname;
+        const currentFile = currentPath.split('/').pop() || 'index.html';
+        
+        // Determine the correct path for the new language
+        let newPath;
+        
+        if (currentPath.includes('/en/') || currentPath.includes('/tr/') || 
+            currentPath.includes('/ar/') || currentPath.includes('/sv/')) {
+            // Already in a language folder - replace the language segment
+            newPath = currentPath.replace(/\/(en|sv|tr|ar)\//, `/${targetLang}/`);
+        } else {
+            // At root level - redirect to language folder
+            if (currentFile === 'index.html' || currentPath === '/') {
+                newPath = `/${targetLang}/index.html`;
+            } else {
+                newPath = `/${targetLang}/${currentFile}`;
+            }
+        }
+        
+        // Navigate to the new language version
+        window.location.href = newPath;
+    }
+
+    // Optional: Auto-redirect based on browser language on first visit
+    // Only do this if no language is stored and user is at root
+    const storedLang = localStorage.getItem('preferredLang');
+    const browserLang = navigator.language.split('-')[0];
+    const currentPath = window.location.pathname;
+    
+    if (!storedLang && !currentPath.includes('/en/') && !currentPath.includes('/tr/') && 
+        !currentPath.includes('/ar/') && !currentPath.includes('/sv/') && supportedLangs.includes(browserLang)) {
+        switchLanguage(browserLang);
+    }
+});
