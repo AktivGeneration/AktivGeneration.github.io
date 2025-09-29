@@ -77,6 +77,18 @@ $(document).ready(function () {
                 $('body').removeClass('no-scroll');
             });
 
+            // Re-bind language dropdown after navbar injection
+            const $languageSelectorInjected = $('.language-selector');
+            $languageSelectorInjected.off('click.lang').on('click.lang', '> a', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $languageSelectorInjected.toggleClass('open');
+            });
+            // Close language dropdown on outside click
+            $(document).off('click.langdoc').on('click.langdoc', function () {
+                $languageSelectorInjected.removeClass('open');
+            });
+
         // Adjust internal anchors on aktiviteter.html and cookies.html to point back to index sections
         // Adjust internal anchors on aktiviteter.html, cookies.html and integritetspolicy.html to point back to index sections
         if (location.pathname.toLowerCase().includes('aktiviteter.html') 
