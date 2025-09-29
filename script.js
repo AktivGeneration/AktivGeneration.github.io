@@ -89,6 +89,30 @@ $(document).ready(function () {
                 $languageSelectorInjected.removeClass('open');
             });
 
+            // Bind language selection to navigate to same page in selected language
+            $('.language-dropdown a[data-lang]').off('click.langsel').on('click.langsel', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const selectedLang = $(this).attr('data-lang');
+
+                const currentPath = window.location.pathname;
+                const currentFile = currentPath.split('/').pop() || 'index.html';
+
+                let newPath;
+                if (/\/(en|sv|tr|ar)\//.test(currentPath)) {
+                    newPath = currentPath.replace(/\/(en|sv|tr|ar)\//, `/${selectedLang}/`);
+                } else {
+                    newPath = `/${selectedLang}/${currentFile}`;
+                }
+
+                // Ensure index mapping stays index.html
+                if (currentFile === '' || currentFile === 'index.html') {
+                    newPath = `/${selectedLang}/index.html`;
+                }
+
+                window.location.href = newPath;
+            });
+
         // Adjust internal anchors on aktiviteter.html and cookies.html to point back to index sections
         // Adjust internal anchors on aktiviteter.html, cookies.html and integritetspolicy.html to point back to index sections
         if (location.pathname.toLowerCase().includes('aktiviteter.html') 
