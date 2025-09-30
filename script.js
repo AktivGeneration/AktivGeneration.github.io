@@ -125,22 +125,7 @@ $(document).ready(function () {
                 e.preventDefault();
                 e.stopPropagation();
                 const selectedLang = $(this).attr('data-lang');
-
-                const currentPath = window.location.pathname;
-                const currentFile = currentPath.split('/').pop() || 'index.html';
-
-                let newPath;
-                if (/\/(en|sv|tr|ar)\//.test(currentPath)) {
-                    newPath = currentPath.replace(/\/(en|sv|tr|ar)\//, `/${selectedLang}/`);
-                } else {
-                    newPath = `/${selectedLang}/${currentFile}`;
-                }
-
-                // Ensure index mapping stays index.html
-                if (currentFile === '' || currentFile === 'index.html') {
-                    newPath = `/${selectedLang}/index.html`;
-                }
-
+                const newPath = computeNewLangPath(selectedLang);
                 window.location.href = newPath;
             });
 
@@ -455,6 +440,42 @@ window.addEventListener('blur', function() {
     serviceOpened = true;
 });
 
+// --- Language path helper: build correct path for target language ---
+function computeNewLangPath(targetLang) {
+    const supported = ['sv','en','tr','ar'];
+    const pathname = window.location.pathname || '/';
+    const segs = pathname.split('/').filter(Boolean); // remove empty
+
+    // if no segments (root)
+    if (segs.length === 0) return `/${targetLang}/index.html`;
+
+    // if first segment is a language folder
+    if (supported.includes(segs[0])) {
+        segs[0] = targetLang;
+        // if only language present (e.g. /sv or /sv/)
+        if (segs.length === 1) return `/${segs[0]}/index.html`;
+        // otherwise join back
+        return '/' + segs.join('/');
+    }
+
+    // if repo prefix contains a language segment later (e.g. /user/repo/sv/index.html)
+    const idx = segs.findIndex(s => supported.includes(s));
+    if (idx !== -1) {
+        segs[idx] = targetLang;
+        return '/' + segs.join('/');
+    }
+
+    // No language segment present: attach language folder before the last segment (file or dir)
+    const last = segs[segs.length - 1];
+    // If last looks like a file (contains a dot), use it as filename
+    if (last && last.includes('.')) {
+        return `/${targetLang}/${last}`;
+    }
+
+    // Otherwise treat as directory => map to index
+    return `/${targetLang}/index.html`;
+}
+
 // Phone functionality
 document.addEventListener('DOMContentLoaded', function() {
     const phoneLink = document.getElementById('phoneLink');
@@ -607,7 +628,10 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const selectedLang = e.target.getAttribute('data-lang');
-            switchLanguage(selectedLang);
+            // store preference then navigate using robust path helper
+            localStorage.setItem('preferredLang', selectedLang);
+            const newPath = computeNewLangPath(selectedLang);
+            window.location.href = newPath;
         });
     });
 
