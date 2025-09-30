@@ -1146,14 +1146,14 @@ body {
 
 /* Dark theme variables */
 body.dark {
-  --bg: #07101a;
-  --surface: #0f1b25;
-  --text: #e6eef6;
-  --muted: #9aa8b2;
-  --accent: #f59e55; /* softer orange for dark */
-  --nav-bg: #08131a;
-  --nav-text: #e6eef6;
-  --card-shadow: rgba(0,0,0,0.6);
+    --bg: #134e8f;
+    --surface: #606d79;
+    --text: #e6eef6;
+    --muted: #9aa8b2;
+    --accent: #f59e55;
+    --nav-bg: #11212b;
+    --nav-text: #e6eef6;
+    --card-shadow: rgb(157 19 19 / 60%);
 }
 
 /* Generic element overrides using the variables */
@@ -1252,4 +1252,96 @@ body.dark .skills .skills-content .left p {
 /* Small mobile improvements */
 @media (max-width: 947px) {
   .theme-toggle { width: 40px; height: 36px; }
+}
+
+/* ---------- Dark mode fine-tuning ---------- */
+/* Improve hero contrast, nav, cards, dropdowns and form controls in dark mode */
+body.dark .home {
+    /* stronger inset to ensure text remains readable over background image */
+    box-shadow: 0 3000px rgba(0,0,0,0.65) inset;
+    color: var(--text);
+}
+
+body.dark .home .home-content .text-2,
+body.dark .home .home-content .text-3 {
+    color: var(--text);
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* Navbar tweaks for dark */
+body.dark .navbar {
+    background: linear-gradient(180deg, rgba(8,19,26,0.9), rgba(8,19,26,0.95));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+body.dark .navbar img {
+    filter: none;
+}
+body.dark .navbar .menu li a:hover {
+    color: var(--accent) !important;
+    text-shadow: none;
+}
+
+/* Make language dropdown and mobile menu fit dark surface */
+body.dark .navbar .menu li .language-dropdown {
+    background: var(--surface) !important;
+    border: 1px solid rgba(255,255,255,0.04) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+}
+
+/* Cards and surfaces */
+body.dark .services .serv-content .card,
+body.dark .card-list .card-item {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--surface));
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* Footer contrast */
+body.dark footer {
+    background: #03060a;
+    color: var(--text);
+}
+
+/* Form controls and links in dark */
+body.dark input,
+body.dark textarea,
+body.dark select {
+    background: rgba(255,255,255,0.02);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+body.dark a { color: var(--accent); }
+body.dark a:hover { color: #ffd6b0; }
+
+/* Theme toggle visual polish */
+.theme-toggle {
+    transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+body.dark .theme-toggle {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--nav-text);
+}
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(245,159,85,0.08);
+}
+
+/* Ensure scroll-up button remains visible and accessible */
+body.dark .scroll-up-btn {
+    background: var(--accent);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* subtle image dimming if needed (optional) */
+body.dark img[role="presentation"],
+body.dark .home img {
+    filter: contrast(0.98) saturate(0.95);
+}
+
+/* small screens: keep mobile menu readable */
+@media (max-width: 947px) {
+    body.dark .navbar .menu {
+        background: var(--surface) !important;
+    }
 }
