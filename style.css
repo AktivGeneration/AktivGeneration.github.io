@@ -1129,3 +1129,127 @@ body {
     z-index: 1000;
     font-size: 14px;
 }
+
+
+/* ---------- Night / Dark mode variables and overrides ---------- */
+/* lightweight variable approach so overrides are easy to maintain */
+:root{
+  --bg: #f1f1f1;
+  --surface: #fff;
+  --text: #111;
+  --muted: #7f8c8d;
+  --accent: #f47932;
+  --nav-bg: #f1f1f1;
+  --nav-text: #874a4a;
+  --card-shadow: rgba(0,0,0,0.15);
+}
+
+/* Dark theme variables */
+body.dark {
+  --bg: #07101a;
+  --surface: #0f1b25;
+  --text: #e6eef6;
+  --muted: #9aa8b2;
+  --accent: #f59e55; /* softer orange for dark */
+  --nav-bg: #08131a;
+  --nav-text: #e6eef6;
+  --card-shadow: rgba(0,0,0,0.6);
+}
+
+/* Generic element overrides using the variables */
+body {
+  background-color: var(--bg) !important;
+  color: var(--text);
+}
+
+/* Sections and common white surfaces */
+.services,
+.skills,
+.about,
+.contact,
+.teams,
+footer,
+.about .about-content,
+.skills .skills-content,
+.services .serv-content,
+.contact .contact-content {
+  background: var(--surface) !important;
+  color: var(--text);
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+/* Navbar */
+.navbar {
+  background: var(--nav-bg) !important;
+}
+.navbar .menu li a {
+  color: var(--nav-text) !important;
+}
+.navbar.sticky {
+  /* keep accent when sticky but adapt to theme */
+  background: linear-gradient(90deg, var(--accent), rgba(0,0,0,0.05));
+}
+.navbar.sticky .menu li a { color: #fff; }
+
+/* Cards, elements using orange accent */
+.services .serv-content .card,
+.card-list .card-item {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--surface));
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Accent color updates */
+i, .text-3, .home .home-content a, .home .home-content a:hover {
+  color: var(--accent);
+}
+.home .home-content a { background: var(--accent); }
+
+/* Scroll-up button */
+.scroll-up-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background: #0b1116;
+  color: var(--text);
+}
+
+/* Contact card links */
+.contact .contact-content .info .sub-title a#emailLink,
+.contact .contact-content .info .sub-title a#phoneLink {
+  color: var(--accent);
+}
+
+/* Theme toggle button styling */
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  color: var(--nav-text);
+  font-size: 16px;
+  transition: transform .12s ease, background .12s ease;
+}
+.theme-toggle:hover { transform: translateY(-2px); }
+.theme-toggle:active { transform: translateY(0); }
+
+/* If you want the toggle fixed in a corner (optional): */
+/* .theme-toggle.fixed { position: fixed; right: 16px; top: 16px; z-index: 1001; } */
+
+/* make sure some white text elements in dark mode are visible */
+body.dark .services .serv-content .card .text,
+body.dark .about .about-content .right p,
+body.dark .skills .skills-content .left p {
+  color: var(--text);
+}
+
+/* Small mobile improvements */
+@media (max-width: 947px) {
+  .theme-toggle { width: 40px; height: 36px; }
+}

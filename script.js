@@ -619,3 +619,101 @@ document.addEventListener('DOMContentLoaded', () => {
         switchLanguage(browserLang);
     }
 });
+
+// Night mode toggle with localStorage & prefers-color-scheme fallback
+// Night mode toggle with localStorage & prefers-color-scheme fallback
+(function () {
+  const STORAGE_KEY = 'site-theme';
+  const body = document.body;
+
+  // Set theme
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      body.classList.add('dark');
+    } else {
+      body.classList.remove('dark');
+    }
+    localStorage.setItem(STORAGE_KEY, theme);
+    updateToggleIcon();
+  }
+
+  // Update moon/sun icon
+  function updateToggleIcon() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const icon = btn.querySelector('i');
+    if (body.classList.contains('dark')) {
+      icon.className = 'fas fa-sun';
+      btn.setAttribute('aria-pressed', 'true');
+    } else {
+      icon.className = 'fas fa-moon';
+      btn.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  // Initialize theme based on localStorage or system preference
+  function initTheme() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      setTheme(stored);
+      return;
+    }
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+
+  // Create toggle button if not exists
+  function createToggle() {
+    let btn = document.getElementById('themeToggle');
+    if (btn) return btn;
+
+    const nav = document.querySelector('.navbar .max-width');
+    btn = document.createElement('button');
+    btn.id = 'themeToggle';
+    btn.className = 'theme-toggle';
+    btn.setAttribute('aria-label', 'Toggle night mode');
+    btn.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i>';
+
+    if (nav) {
+      nav.appendChild(btn);
+    } else {
+      body.appendChild(btn);
+    }
+
+    return btn;
+  }
+
+  // After DOM and navbar load
+  document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+
+    // If navbar is loaded dynamically, wait a bit and attach toggle
+    function attachToggle() {
+      const toggle = createToggle();
+      if (!toggle) return;
+      toggle.addEventListener('click', () => {
+        const next = body.classList.contains('dark') ? 'light' : 'dark';
+        setTheme(next);
+      });
+    }
+
+    // Try attaching immediately
+    attachToggle();
+
+    // Also observe changes in navbar if dynamically injected
+    const navbarObserver = new MutationObserver(() => attachToggle());
+    const navbarEl = document.querySelector('.navbar');
+    if (navbarEl) {
+      navbarObserver.observe(navbarEl, { childList: true, subtree: true });
+    }
+  });
+
+  // Optional: respond to system preference changes
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+})();
