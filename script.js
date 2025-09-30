@@ -63,6 +63,37 @@ $(document).ready(function () {
             if (navbarEl) navbarEl.innerHTML = navbarHtml;
             if (footerEl) footerEl.innerHTML = footerHtml;
 
+            // Ensure theme toggle works for injected navbar
+            try {
+                const STORAGE_KEY = 'site-theme';
+                const themeBtn = document.getElementById('themeToggle');
+                const body = document.body;
+                if (themeBtn) {
+                    // sync icon with current theme
+                    const icon = themeBtn.querySelector('i');
+                    if (icon) {
+                        icon.className = body.classList.contains('dark') ? 'fas fa-sun' : 'fas fa-moon';
+                    }
+                    themeBtn.setAttribute('aria-pressed', body.classList.contains('dark') ? 'true' : 'false');
+
+                    // remove any previous listener to avoid duplicates
+                    themeBtn.replaceWith(themeBtn.cloneNode(true));
+                    const freshBtn = document.getElementById('themeToggle');
+                    if (freshBtn) {
+                        freshBtn.addEventListener('click', function () {
+                            const next = body.classList.contains('dark') ? 'light' : 'dark';
+                            if (next === 'dark') body.classList.add('dark'); else body.classList.remove('dark');
+                            localStorage.setItem(STORAGE_KEY, next);
+                            const ic = freshBtn.querySelector('i');
+                            if (ic) ic.className = body.classList.contains('dark') ? 'fas fa-sun' : 'fas fa-moon';
+                            freshBtn.setAttribute('aria-pressed', body.classList.contains('dark') ? 'true' : 'false');
+                        });
+                    }
+                }
+            } catch (err) {
+                console.error('Failed to attach theme toggle after navbar injection', err);
+            }
+
             // Re-bind navbar interactions after injection
             $('.menu-btn').off('click').on('click', function () {
                 $('.navbar .menu').toggleClass("active");
