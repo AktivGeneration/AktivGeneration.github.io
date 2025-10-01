@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="ar">
 
 <head>
     <!--  Helping search engine to understand the language versions -->
@@ -28,10 +28,26 @@
     <style>
         /* Make outer and inner backgrounds uniform on this page */
         body { background-color: #ffffff; }
+
+        /* Scoped typography adjustments for Arabic activities page only */
+        /* Use a page-specific class on body to avoid affecting other languages */
+        .ar-page .title {
+            /* larger heading for Arabic script */
+            font-size: 34px !important;
+        }
+        .ar-page .justify-text,
+        .ar-page p {
+            font-size: 18px !important;
+            line-height: 1.9 !important;
+        }
+        /* Slightly increase the date/meta text */
+        .ar-page section.about p[style] {
+            font-size: 16px !important;
+        }
     </style>
 </head>
 
-<body>
+<body class="ar-page">
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
