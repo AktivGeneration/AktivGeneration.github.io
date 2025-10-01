@@ -253,7 +253,7 @@ section .title {
 .scroll-up-btn::after {
     content: '\2191'; /* upward arrow */
     display: block;
-    font-size: 20px;
+    font-size: 40px;
     line-height: 45px; /* vertically center */
     text-align: center;
     color: #fff;
