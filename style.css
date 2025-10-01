@@ -245,6 +245,22 @@ section .title {
     filter: brightness(90%);
 }
 
+/* Ensure scroll-up button displays a clear upward arrow even if icon font fails */
+.scroll-up-btn i { 
+    /* hide font-icon fallback to avoid an empty circle look when fonts don't load */
+    display: none;
+}
+.scroll-up-btn::after {
+    content: '\2191'; /* upward arrow */
+    display: block;
+    font-size: 20px;
+    line-height: 45px; /* vertically center */
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 /* home section styling */
 .home {
