@@ -155,11 +155,13 @@ section .title {
 .navbar .menu li.language-selector {
     position: relative;
 }
-.navbar .menu li.language-selector > a {
+
+.navbar .menu li.language-selector>a {
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
+
 .navbar .menu li .language-dropdown {
     position: absolute;
     top: 120%;
@@ -169,16 +171,19 @@ section .title {
     border-radius: 4px;
     padding: 8px 0;
     min-width: 160px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     display: none;
     z-index: 1000;
 }
+
 .navbar .menu li.language-selector.open .language-dropdown {
     display: block;
 }
+
 .navbar .menu li .language-dropdown li {
     display: block;
 }
+
 .navbar .menu li .language-dropdown li a {
     display: block;
     color: #333;
@@ -186,6 +191,7 @@ section .title {
     padding: 8px 14px;
     margin: 0;
 }
+
 .navbar .menu li .language-dropdown li a:hover {
     background: #f7f7f7;
     color: #f47932;
@@ -246,15 +252,18 @@ section .title {
 }
 
 /* Ensure scroll-up button displays a clear upward arrow even if icon font fails */
-.scroll-up-btn i { 
+.scroll-up-btn i {
     /* hide font-icon fallback to avoid an empty circle look when fonts don't load */
     display: none;
 }
+
 .scroll-up-btn::after {
-    content: '\2191'; /* upward arrow */
+    content: '\2191';
+    /* upward arrow */
     display: block;
     font-size: 40px;
-    line-height: 45px; /* vertically center */
+    line-height: 45px;
+    /* vertically center */
     text-align: center;
     color: #fff;
     font-weight: 700;
@@ -682,7 +691,8 @@ footer span a:hover {
         top: 0;
         background: #f1f1f1;
         text-align: center;
-        padding-top: 100px; /* greater top padding for safe-area and sticky header */
+        padding-top: 100px;
+        /* greater top padding for safe-area and sticky header */
         transition: all 0.3s ease;
     }
 
@@ -698,12 +708,14 @@ footer span a:hover {
     .navbar .menu li.language-selector {
         position: static;
     }
+
     .navbar .menu li .language-dropdown {
         position: static;
         box-shadow: none;
         border: 0;
         padding: 0;
     }
+
     .navbar .menu li.language-selector.open .language-dropdown {
         display: block;
     }
@@ -757,6 +769,7 @@ footer span a:hover {
     .about#aktiviteter .about-content {
         flex-direction: column;
     }
+
     .about#aktiviteter .about-content .column.left,
     .about#aktiviteter .about-content .column.right {
         width: 100%;
@@ -805,6 +818,7 @@ footer span a:hover {
         aspect-ratio: 16 / 9;
         display: block;
     }
+
     .about#aktiviteter .about-content .left a img {
         width: 100% !important;
         height: auto !important;
@@ -923,19 +937,21 @@ footer span a:hover {
     .about .about-content .right p {
         text-align: justify;
         font-size: 16px;
-    }   
+    }
 }
+
 /* Cookies page specific styles */
 /* Cookies page specific styles */
-body { 
-    background-color: #ffffff !important; 
+body {
+    background-color: #ffffff !important;
 }
 
 .cookies-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
-    font-family: 'Poppins', sans-serif; /* Add this line */
+    font-family: 'Poppins', sans-serif;
+    /* Add this line */
 }
 
 .cookies-content h1 {
@@ -943,7 +959,8 @@ body {
     color: #2c3e50;
     margin-bottom: 10px;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif; /* Add this line to match section titles */
+    font-family: 'Ubuntu', sans-serif;
+    /* Add this line to match section titles */
 }
 
 .last-updated {
@@ -951,7 +968,8 @@ body {
     color: #7f8c8d;
     margin-bottom: 40px;
     font-style: italic;
-    font-size: 1rem; /* Add consistent font size */
+    font-size: 1rem;
+    /* Add consistent font size */
 }
 
 .cookies-content section {
@@ -962,14 +980,16 @@ body {
     color: #2c3e50;
     margin-bottom: 15px;
     font-size: 1.5rem;
-    font-family: 'Ubuntu', sans-serif; /* Match your section styling */
+    font-family: 'Ubuntu', sans-serif;
+    /* Match your section styling */
 }
 
 .cookies-content p {
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: left;
-    font-size: 17px; /* Match your existing paragraph font size */
+    font-size: 17px;
+    /* Match your existing paragraph font size */
 }
 
 .cookies-content ul {
@@ -980,7 +1000,8 @@ body {
 .cookies-content li {
     margin-bottom: 8px;
     line-height: 1.5;
-    font-size: 17px; /* Match paragraph font size */
+    font-size: 17px;
+    /* Match paragraph font size */
 }
 
 .cookies-content a {
@@ -1040,7 +1061,7 @@ body {
     background: white;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
     width: 200px;
     margin-top: 5px;
@@ -1050,7 +1071,8 @@ body {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: #27ae60; /* Light green color */
+    color: #27ae60;
+    /* Light green color */
     border-bottom: 1px solid #eee;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -1058,7 +1080,8 @@ body {
 
 #emailOptions a:hover {
     background-color: #f5f5f5;
-    color: #219653; /* Darker green on hover */
+    color: #219653;
+    /* Darker green on hover */
 }
 
 #emailOptions a:last-child {
@@ -1107,7 +1130,7 @@ body {
     background: white;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
     width: 200px;
     margin-top: 5px;
@@ -1117,7 +1140,8 @@ body {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: #27ae60; /* Light green color */
+    color: #27ae60;
+    /* Light green color */
     border-bottom: 1px solid #eee;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -1125,7 +1149,8 @@ body {
 
 #phoneOptions a:hover {
     background-color: #f5f5f5;
-    color: #219653; /* Darker green on hover */
+    color: #219653;
+    /* Darker green on hover */
 }
 
 #phoneOptions a:last-child {
@@ -1149,15 +1174,15 @@ body {
 
 /* ---------- Night / Dark mode variables and overrides ---------- */
 /* lightweight variable approach so overrides are easy to maintain */
-:root{
-  --bg: #f1f1f1;
-  --surface: #fff;
-  --text: #111;
-  --muted: #7f8c8d;
-  --accent: #f47932;
-  --nav-bg: #f1f1f1;
-  --nav-text: #874a4a;
-  --card-shadow: rgba(0,0,0,0.15);
+:root {
+    --bg: #f1f1f1;
+    --surface: #fff;
+    --text: #111;
+    --muted: #7f8c8d;
+    --accent: #f47932;
+    --nav-bg: #f1f1f1;
+    --nav-text: #874a4a;
+    --card-shadow: rgba(0, 0, 0, 0.15);
 }
 
 /* Dark theme variables */
@@ -1174,8 +1199,8 @@ body.dark {
 
 /* Generic element overrides using the variables */
 body {
-  background-color: var(--bg) !important;
-  color: var(--text);
+    background-color: var(--bg) !important;
+    color: var(--text);
 }
 
 /* Sections and common white surfaces */
@@ -1189,71 +1214,88 @@ footer,
 .skills .skills-content,
 .services .serv-content,
 .contact .contact-content {
-  background: var(--surface) !important;
-  color: var(--text);
-  box-shadow: 0 4px 12px var(--card-shadow);
+    background: var(--surface) !important;
+    color: var(--text);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 /* Navbar */
 .navbar {
-  background: var(--nav-bg) !important;
+    background: var(--nav-bg) !important;
 }
+
 .navbar .menu li a {
-  color: var(--nav-text) !important;
+    color: var(--nav-text) !important;
 }
+
 .navbar.sticky {
-  /* keep accent when sticky but adapt to theme */
-  background: linear-gradient(90deg, var(--accent), rgba(0,0,0,0.05));
+    /* keep accent when sticky but adapt to theme */
+    background: linear-gradient(90deg, var(--accent), rgba(0, 0, 0, 0.05));
 }
-.navbar.sticky .menu li a { color: #fff; }
+
+.navbar.sticky .menu li a {
+    color: #fff;
+}
 
 /* Cards, elements using orange accent */
 .services .serv-content .card,
 .card-list .card-item {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--surface));
-  border: 1px solid rgba(255,255,255,0.03);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), var(--surface));
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 /* Accent color updates */
-i, .text-3, .home .home-content a, .home .home-content a:hover {
-  color: var(--accent);
+i,
+.text-3,
+.home .home-content a,
+.home .home-content a:hover {
+    color: var(--accent);
 }
-.home .home-content a { background: var(--accent); }
+
+.home .home-content a {
+    background: var(--accent);
+}
 
 /* Scroll-up button */
 .scroll-up-btn {
-  background: var(--accent);
-  color: #fff;
+    background: var(--accent);
+    color: #fff;
 }
 
 /* Footer */
 footer {
-  background: #0b1116;
-  color: var(--text);
+    background: #0b1116;
+    color: var(--text);
 }
 
 /* Contact card links */
 .contact .contact-content .info .sub-title a#emailLink,
 .contact .contact-content .info .sub-title a#phoneLink {
-  color: var(--accent);
+    color: var(--accent);
 }
 
 /* Theme toggle button styling */
 .theme-toggle {
-  display: inline-grid;
-  place-items: center;
-  width: 44px;
-  height: 40px;
-  border-radius: 8px;
-  border: 0;
-  cursor: pointer;
-  background: transparent;
-  color: var(--nav-text);
-  font-size: 16px;
-  transition: transform .12s ease, background .12s ease;
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 40px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    color: var(--nav-text);
+    font-size: 16px;
+    transition: transform .12s ease, background .12s ease;
 }
-.theme-toggle:hover { transform: translateY(-2px); }
-.theme-toggle:active { transform: translateY(0); }
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+    transform: translateY(0);
+}
 
 /* If you want the toggle fixed in a corner (optional): */
 /* .theme-toggle.fixed { position: fixed; right: 16px; top: 16px; z-index: 1001; } */
@@ -1262,36 +1304,41 @@ footer {
 body.dark .services .serv-content .card .text,
 body.dark .about .about-content .right p,
 body.dark .skills .skills-content .left p {
-  color: var(--text);
+    color: var(--text);
 }
 
 /* Small mobile improvements */
 @media (max-width: 947px) {
-  .theme-toggle { width: 40px; height: 36px; }
+    .theme-toggle {
+        width: 40px;
+        height: 36px;
+    }
 }
 
 /* ---------- Dark mode fine-tuning ---------- */
 /* Improve hero contrast, nav, cards, dropdowns and form controls in dark mode */
 body.dark .home {
     /* stronger inset to ensure text remains readable over background image */
-    box-shadow: 0 3000px rgba(0,0,0,0.65) inset;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.65) inset;
     color: var(--text);
 }
 
 body.dark .home .home-content .text-2,
 body.dark .home .home-content .text-3 {
     color: var(--text);
-    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 /* Navbar tweaks for dark */
 body.dark .navbar {
-    background: linear-gradient(180deg, rgba(8,19,26,0.9), rgba(8,19,26,0.95));
-    border-bottom: 1px solid rgba(255,255,255,0.03);
+    background: linear-gradient(180deg, rgba(8, 19, 26, 0.9), rgba(8, 19, 26, 0.95));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
+
 body.dark .navbar img {
     filter: none;
 }
+
 body.dark .navbar .menu li a:hover {
     color: var(--accent) !important;
     text-shadow: none;
@@ -1300,16 +1347,16 @@ body.dark .navbar .menu li a:hover {
 /* Make language dropdown and mobile menu fit dark surface */
 body.dark .navbar .menu li .language-dropdown {
     background: var(--surface) !important;
-    border: 1px solid rgba(255,255,255,0.04) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Cards and surfaces */
 body.dark .services .serv-content .card,
 body.dark .card-list .card-item {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--surface));
-    border: 1px solid rgba(255,255,255,0.03);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), var(--surface));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
 /* Footer contrast */
@@ -1322,31 +1369,39 @@ body.dark footer {
 body.dark input,
 body.dark textarea,
 body.dark select {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     color: var(--text);
-    border: 1px solid rgba(255,255,255,0.04);
+    border: 1px solid rgba(255, 255, 255, 0.04);
 }
-body.dark a { color: var(--accent); }
-body.dark a:hover { color: #ffd6b0; }
+
+body.dark a {
+    color: var(--accent);
+}
+
+body.dark a:hover {
+    color: #ffd6b0;
+}
 
 /* Theme toggle visual polish */
 .theme-toggle {
     transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
 }
+
 body.dark .theme-toggle {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
     color: var(--nav-text);
 }
+
 .theme-toggle:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(245,159,85,0.08);
+    box-shadow: 0 0 0 4px rgba(245, 159, 85, 0.08);
 }
 
 /* Ensure scroll-up button remains visible and accessible */
 body.dark .scroll-up-btn {
     background: var(--accent);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 /* subtle image dimming if needed (optional) */

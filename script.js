@@ -15,6 +15,15 @@ $(document).ready(function () {
         }
     });
 
+    // Dynamically set footer year for static hosting
+    function setFooterYear() {
+        var yearSpan = document.getElementById('footer-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    }
+    setFooterYear();
+
     // slide-up script
     $('.scroll-up-btn').click(function () {
         $('html').animate({ scrollTop: 0 });
