@@ -781,7 +781,7 @@ footer span a:hover {
         margin-bottom: 35px;
     }
 
-    .about .about-content .left iframe {
+    .about#aktiviteter .about-content .left iframe {
         width: 100% !important;
         height: auto;
         aspect-ratio: 16 / 9;
@@ -1414,5 +1414,63 @@ body.dark .home img {
 @media (max-width: 947px) {
     body.dark .navbar .menu {
         background: var(--surface) !important;
+    }
+}
+
+/* Press section media styling */
+.about#aktiviteter .about-content .left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.press-image-link {
+    display: block;
+    margin-top: 20px;
+}
+
+.press-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+}
+
+/* Ensure both video and image have same responsive behavior */
+.about#aktiviteter .about-content .left iframe,
+.about#aktiviteter .about-content .left .press-image {
+    width: 100% !important;
+    max-width: 560px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* For larger screens, maintain original sizing but keep responsiveness */
+@media (min-width: 1200px) {
+    .about#aktiviteter .about-content .left iframe,
+    .about#aktiviteter .about-content .left .press-image {
+        max-width: 560px;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 947px) {
+    .about#aktiviteter .about-content .left {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .about#aktiviteter .about-content .left iframe,
+    .about#aktiviteter .about-content .left .press-image {
+        max-width: 100%;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 500px) {
+    .press-image-link {
+        margin-top: 15px;
     }
 }
