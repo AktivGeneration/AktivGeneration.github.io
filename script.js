@@ -15,14 +15,23 @@ $(document).ready(function () {
         }
     });
 
-    // Dynamically set footer year for static hosting
-    function setFooterYear() {
-        var yearSpan = document.getElementById('footer-year');
+    // Wait for footer to load and set current year
+    function initFooterYear() {
+        const yearSpan = document.getElementById('footer-year');
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
+        } else {
+            // Retry after a short delay if footer not loaded yet
+            setTimeout(initFooterYear, 100);
         }
     }
-    setFooterYear();
+
+    // Start the process when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFooterYear);
+    } else {
+        initFooterYear();
+    }
 
     // slide-up script
     $('.scroll-up-btn').click(function () {
