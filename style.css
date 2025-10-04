@@ -228,12 +228,14 @@ section .title {
     background: #f47932;
     right: 30px;
     bottom: 10px;
-    text-align: center;
-    line-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     z-index: 99;
-    font-size: 30px;
-    border-radius: 200px;
+    font-size: 60px;
+    border-radius: 50%;
+    overflow: hidden;
     border-bottom-width: 2px;
     cursor: pointer;
     opacity: 0;
@@ -261,9 +263,8 @@ section .title {
     content: '\2191';
     /* upward arrow */
     display: block;
-    font-size: 40px;
-    line-height: 45px;
-    /* vertically center */
+    font-size: 20px; /* keep the arrow comfortably inside the circle */
+    line-height: 1;
     text-align: center;
     color: #fff;
     font-weight: 700;
