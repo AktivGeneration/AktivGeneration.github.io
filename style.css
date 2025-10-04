@@ -693,6 +693,12 @@ footer span a:hover {
         text-align: center;
         padding-top: 100px;
         /* greater top padding for safe-area and sticky header */
+        /* allow the menu itself to scroll (body gets .no-scroll to prevent background scroll) */
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* momentum scrolling on iOS */
+        max-height: 100vh; /* prevent growing beyond viewport */
+        box-sizing: border-box;
+        padding-bottom: 48px; /* space for last items and potential fixed controls */
         transition: all 0.3s ease;
     }
 
