@@ -1206,6 +1206,8 @@ body.dark {
   --nav-bg: #161622;   
   --nav-text: #e6f1ff; 
   --card-shadow: rgba(0, 245, 212, 0.25);
+  .services .title {
+    color: #ffffff;}
     .contact .contact-content .info .sub-title {
     color: #f6f6f6;
 }

@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="max-width">
         <div class="logo">
-            <a href="#hem">
+            <a href="#anasayfa">
                 <img src="../images/logo.png" id="logo" alt="Aktiv Generation Logo">
             </a>
         </div>
@@ -9,14 +9,15 @@
             <i class="fas fa-bars"></i>
         </div>
         <ul class="menu">
-            <li><a href="#hem" class="menu-btn">Ana Sayfa</a></li>
+            <li><a href="#hem" class="menu-btn">Anasayfa</a></li>
             <li><a href="#om-oss" class="menu-btn">Hakkımızda</a></li>
-            <li><a href="#vad-vi-gor" class="menu-btn">Ne Yapıyoruz</a></li>
+            <li><a href="#vad-vi-gor" class="menu-btn">Ne yapıyoruz</a></li>
             <li><a href="#aktiviteter" class="menu-btn">Basın</a></li>
-            <li><a href="aktiviteter.html" class="menu-btn">Aktiviteler</a></li>
-            <li><a href="#bildgalleri" class="menu-btn">Fotoğraf Galerisi</a></li>
+            <li><a href="aktiviteter.html" class="menu-btn">Etkinlikler</a></li>
+            <li><a href="#bildgalleri" class="menu-btn">Galeri</a></li>
             <li><a href="#kontakt" class="menu-btn">İletişim</a></li>
 
+            <!-- Desktop: dil seçici dropdown -->
             <li class="language-selector">
                 <a href="#" class="menu-btn">
                     <i class="fas fa-globe"></i> Dil
@@ -25,15 +26,21 @@
                 <ul class="language-dropdown">
                     <li><a href="../sv/index.html" data-lang="sv">Svenska</a></li>
                     <li><a href="../tr/index.html" data-lang="tr">Türkçe</a></li>
-                    <li><a href="index.html" data-lang="en">English</a></li>
+                    <li><a href="../en/index.html" data-lang="en">English</a></li>
                     <li><a href="../ar/index.html" data-lang="ar">العربية</a></li>
                 </ul>
             </li>
 
+            <!-- Mobil: diller ayrı menü elemanları olarak -->
+            <li class="mobile-language"><a href="../sv/index.html" data-lang="sv">Svenska</a></li>
+            <li class="mobile-language"><a href="../tr/index.html" data-lang="tr">Türkçe</a></li>
+            <li class="mobile-language"><a href="../en/index.html" data-lang="en">English</a></li>
+            <li class="mobile-language"><a href="../ar/index.html" data-lang="ar">العربية</a></li>
+
             <li><a href="https://forms.gle/sfEatWLa9RC6eEE67" id="outbound-link" class="menu-btn" target="_blank"
-                    rel="noopener noreferrer">Üye Ol</a></li>
+                    rel="noopener noreferrer">Üye ol</a></li>
             <li>
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle night mode">
+                <button id="themeToggle" class="theme-toggle" aria-label="Gece modunu değiştir">
                     <i class="fas fa-moon"></i>
                 </button>
             </li>
@@ -41,7 +48,7 @@
     </div>
 </nav>
 
-<!-- Minimal JS for hamburger menu -->
+<!-- Hamburger menü için JS -->
 <script>
     const menuBtn = document.querySelector('.menu-btn i');
     const menu = document.querySelector('.menu');
@@ -50,6 +57,7 @@
         menu.classList.toggle('active');
     });
 
+    // Her bağlantıya tıklanınca menüyü kapat
     document.querySelectorAll('.menu li a').forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('active');
@@ -57,37 +65,86 @@
     });
 </script>
 
-<!-- Minimal CSS for desktop hamburger functionality -->
+<!-- CSS: Masaüstü dropdown, mobil diller -->
 <style>
-.menu {
+/* Temel menü */
+.navbar .max-width .menu {
     display: none;
     flex-direction: column;
-    gap: 10px; /* spacing between items when menu is vertical */
+    gap: 10px;
 }
 
-.menu.active {
+/* Menü aktif olduğunda göster */
+.navbar .max-width .menu.active {
     display: flex;
 }
 
-.menu li a {
-    white-space: nowrap; /* prevent text from wrapping */
+/* Yazı kaymasını engelle */
+.navbar .max-width .menu li a {
+    white-space: nowrap;
 }
 
-/* Desktop layout */
+/* Mobil dilleri varsayılan olarak gizle */
+.navbar .max-width .menu > .mobile-language {
+    display: none !important;
+}
+
+/* Masaüstü görünüm */
 @media (min-width: 768px) {
-    .menu {
+    .navbar .max-width .menu {
         display: flex !important;
         flex-direction: row;
-        gap: 20px; /* spacing between menu items */
+        gap: 20px;
+        align-items: center;
     }
 
-    .menu li a {
-        white-space: nowrap; /* keep each item on one line */
+    .navbar .max-width .menu li a {
+        white-space: nowrap;
+    }
+
+    /* Dropdown göster, mobil dilleri gizle */
+    .navbar .max-width .menu > .language-selector {
+        display: block !important;
+        position: relative;
+    }
+    .navbar .max-width .menu > .language-selector .language-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        padding: 8px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        z-index: 40;
+    }
+    .navbar .max-width .menu > .language-selector:hover .language-dropdown {
+        display: block;
+    }
+
+    .navbar .max-width .menu > .mobile-language {
+        display: none !important;
     }
 }
 
-/* Optional: make menu items shrink nicely if needed */
-.menu li {
-    flex-shrink: 0;
+/* Mobil görünüm */
+@media (max-width: 767px) {
+    .navbar .max-width .menu {
+        width: 100%;
+    }
+
+    /* Masaüstü dropdown'u gizle */
+    .navbar .max-width .menu > .language-selector {
+        display: none !important;
+    }
+
+    /* Dilleri ayrı liste olarak göster */
+    .navbar .max-width .menu > .mobile-language {
+        display: list-item !important;
+    }
+}
+
+/* Ek güvenlik */
+.navbar .max-width .menu > li {
+    display: list-item;
 }
 </style>
