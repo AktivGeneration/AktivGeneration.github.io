@@ -1175,7 +1175,7 @@ body {
 /* ---------- Night / Dark mode variables and overrides ---------- */
 /* lightweight variable approach so overrides are easy to maintain */
 :root {
-    --bg: #f1f1f1;
+    --bg: #ffffff;
     --surface: #fff;
     --text: #111;
     --muted: #7f8c8d;
@@ -1187,15 +1187,16 @@ body {
 
 /* Dark theme variables */
 body.dark {
-    --bg: #134e8f;
-    --surface: #606d79;
-    --text: #e6eef6;
-    --muted: #9aa8b2;
-    --accent: #f59e55;
-    --nav-bg: #11212b;
-    --nav-text: #e6eef6;
-    --card-shadow: rgb(157 19 19 / 60%);
+  --bg: #0a0a0f;       
+  --surface: #12121c;  
+  --text: #e6f1ff;     
+  --muted: #7d8da5;    
+  --accent: #00f5d4;   /* neon aqua */
+  --nav-bg: #161622;   
+  --nav-text: #e6f1ff; 
+  --card-shadow: rgba(0, 245, 212, 0.25);
 }
+
 
 /* Generic element overrides using the variables */
 body {
