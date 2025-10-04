@@ -40,3 +40,54 @@
         </ul>
     </div>
 </nav>
+
+<!-- Minimal JS for hamburger menu -->
+<script>
+    const menuBtn = document.querySelector('.menu-btn i');
+    const menu = document.querySelector('.menu');
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.menu li a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
+    });
+</script>
+
+<!-- Minimal CSS for desktop hamburger functionality -->
+<style>
+.menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px; /* spacing between items when menu is vertical */
+}
+
+.menu.active {
+    display: flex;
+}
+
+.menu li a {
+    white-space: nowrap; /* prevent text from wrapping */
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+    .menu {
+        display: flex !important;
+        flex-direction: row;
+        gap: 20px; /* spacing between menu items */
+    }
+
+    .menu li a {
+        white-space: nowrap; /* keep each item on one line */
+    }
+}
+
+/* Optional: make menu items shrink nicely if needed */
+.menu li {
+    flex-shrink: 0;
+}
+</style>
