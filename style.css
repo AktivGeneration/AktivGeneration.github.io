@@ -1175,15 +1175,19 @@ body {
 /* ---------- Night / Dark mode variables and overrides ---------- */
 /* lightweight variable approach so overrides are easy to maintain */
 :root {
-    --bg: #ffffff;
-    --surface: #fff;
-    --text: #111;
-    --muted: #7f8c8d;
-    --accent: #f47932;
-    --nav-bg: #f1f1f1;
-    --nav-text: #874a4a;
-    --card-shadow: rgba(0, 0, 0, 0.15);
+  --bg: #fdfaf6;       
+  --surface: #ffffff;  
+  --text: #2d2d2d;     
+  --muted: #8e8e8e;    
+  --accent: #d35400;   /* burnt orange */
+  --nav-bg: #f8f4ef;   
+  --nav-text: #2d2d2d; 
+  --card-shadow: rgba(211, 84, 0, 0.15);
 }
+
+
+
+
 
 /* Dark theme variables */
 body.dark {
