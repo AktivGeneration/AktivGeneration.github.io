@@ -147,11 +147,11 @@ $(document).ready(function () {
                 window.location.href = newPath;
             });
 
-        // Adjust internal anchors on aktiviteter.html and cookies.html to point back to index sections
-        // Adjust internal anchors on aktiviteter.html, cookies.html and integritetspolicy.html to point back to index sections
+        // Adjust internal anchors on aktiviteter.html, cookies.html, privacy_policy.html, and facebook.html to point back to index sections
         if (location.pathname.toLowerCase().includes('aktiviteter.html') 
-            ||location.pathname.toLowerCase().includes('cookies.html') 
-            ||location.pathname.toLowerCase().includes('privacy_policy.html')) {
+            || location.pathname.toLowerCase().includes('cookies.html') 
+            || location.pathname.toLowerCase().includes('privacy_policy.html')
+            || location.pathname.toLowerCase().includes('facebook.html')) {
             const map = new Map([
                 ['#hem', 'index.html#hem'],
                 ['#om-oss', 'index.html#om-oss'],
