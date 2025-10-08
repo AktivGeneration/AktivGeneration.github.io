@@ -265,6 +265,13 @@ $(document).ready(function () {
                 { src: '../images/rengör-uppsala-2.jpg', alt: 'Rengör Uppsala del2 2' },
                 { src: '../images/rengör-uppsala-3.jpg', alt: 'Rengör Uppsala del2 3' },
                 { src: '../images/rengör-uppsala-4.jpg', alt: 'Rengör Uppsala del2 4' }
+            ],
+                'gallery-10-images': [
+                { src: '../images/drake-1.jpg', alt: 'Flygdrake 1' },
+                { src: '../images/drake-2.jpg', alt: 'Flygdrake 2' },
+                { src: '../images/drake-3.jpg', alt: 'Flygdrake 3' },
+                { src: '../images/drake-5.jpg', alt: 'Flygdrake 5' },
+                { src: '../images/drake-6.JPG', alt: 'Flygdrake 6' }
             ]
         };
 
