@@ -174,15 +174,13 @@ $(document).ready(function () {
     if (document.getElementById('gallery-images')) {
         const images = [
             { src: "../images/stenhagen-fest-1.jpg", alt: "kulturfest-tält-och-kanvas" },
-            { src: "../images/musik.jpeg", alt: "musik" },
-            { src: "../images/bordtennis-1.jpg", alt: "bordtennis" },
-            { src: "../images/håll-uppsala-rent-1.jpeg", alt: "plocka-skräp-dag" },
-            { src: "../images/aktivitet.JPG", alt: "aktivitet" },
-            { src: "../images/stenhagen-fest-3.JPEG", alt: "kulturfest-spel-med-barn" },
-            { src: "../images/gruppaktivitet.jpeg", alt: "gruppaktivitet" },
+            { src: "../images/musik.jpg", alt: "musik" },
+            { src: "../images/håll-uppsala-rent-1.png", alt: "plocka-skräp-dag" },
+            { src: "../images/stenhagen-fest-3.png", alt: "kulturfest-spel-med-barn" },
+            { src: "../images/gruppaktivitet.jpg", alt: "gruppaktivitet" },
             { src: "../images/gåva.JPG", alt: "gåva" },
-            { src: "../images/stenhagen-fest-2.jpg", alt: "kulturfest-tält-och-banner" },
-            { src: "../images/fika.jpeg", alt: "fika" },
+            { src: "../images/stenhagen-fest-2.png", alt: "kulturfest-tält-och-banner" },
+            { src: "../images/fika.png", alt: "fika" },
             { src: "../images/bordtennis-2.jpg", alt: "bordtennis" },
             { src: "../images/håll-uppsala-rent-2.jpeg", alt: "plocka-skräp-dag-planering" }
         ];
@@ -203,23 +201,19 @@ $(document).ready(function () {
     if (location.pathname.toLowerCase().includes('aktiviteter.html')) {
         const activityGalleries = {
             'gallery-2-images': [
-                { src: '../images/tennis-1.JPG', alt: 'Bordtennis 1' },
-                { src: '../images/tennis-2.jpg', alt: 'Bordtennis 2' },
-                { src: '../images/tennis-3.jpg', alt: 'Bordtennis 3' },
-                { src: '../images/tennis-4.jpg', alt: 'Bordtennis 4' }
+                { src: '../images/tennis-2.jpg', alt: 'Bordtennis 2' }
             ],
             'gallery-3-images': [
-                { src: '../images/rent-uppsala-1.jpeg', alt: 'Håll Uppsala Rent 1' },
-                { src: '../images/rent-uppsala-2.jpeg', alt: 'Håll Uppsala Rent 2' },
+                { src: '../images/rent-uppsala-2.png', alt: 'Håll Uppsala Rent 2' },
                 { src: '../images/rent-uppsala-3.jpeg', alt: 'Håll Uppsala Rent 3' },
                 { src: '../images/rent-uppsala-4.jpeg', alt: 'Håll Uppsala Rent 4' },
-                { src: '../images/rent-uppsala-5.jpeg', alt: 'Håll Uppsala Rent 5' },
+                { src: '../images/rent-uppsala-5.jpg', alt: 'Håll Uppsala Rent 5' },
                 { src: '../images/rent-uppsala-6.jpeg', alt: 'Håll Uppsala Rent 6' },
                 { src: '../images/rent-uppsala-7.jpeg', alt: 'Håll Uppsala Rent 7' }
             ],
             'gallery-3b-images': [
                 { src: '../images/statsdelsfest-1.jpg', alt: 'Stadsdelsfest 1' },
-                { src: '../images/statsdelsfest-2.jpg', alt: 'Stadsdelsfest 2' },
+                { src: '../images/statsdelsfest-2.png', alt: 'Stadsdelsfest 2' },
                 { src: '../images/statsdelsfest-3.jpg', alt: 'Stadsdelsfest 3' },
                 { src: '../images/statsdelsfest-4.jpg', alt: 'Stadsdelsfest 4' },
                 { src: '../images/statsdelsfest-5.jpg', alt: 'Stadsdelsfest 5' },
@@ -230,7 +224,6 @@ $(document).ready(function () {
                 { src: '../images/pulk-1.jpg', alt: 'Pulka 1' },
                 { src: '../images/pulk-2.jpg', alt: 'Pulka 2' },
                 { src: '../images/pulk-3.jpg', alt: 'Pulka 3' },
-                { src: '../images/pulk-4.jpg', alt: 'Pulka 4' },
                 { src: '../images/pulk-5.jpg', alt: 'Pulka 5' },
                 { src: '../images/pulk-6.jpg', alt: 'Pulka 6' }
             ],
@@ -239,12 +232,12 @@ $(document).ready(function () {
                 { src: '../images/eldre-boende-2.jpg', alt: 'LSS boende 2' },
                 { src: '../images/eldre-boende-3.jpg', alt: 'LSS boende 3' },
                 { src: '../images/eldre-boende-4.jpg', alt: 'LSS boende 4' },
-                { src: '../images/eldre-boende-5.jpg', alt: 'LSS boende 5' },
+                { src: '../images/eldre-boende-5.png', alt: 'LSS boende 5' },
                 { src: '../images/eldre-boende-6.jpg', alt: 'LSS boende 6' },
                 { src: '../images/eldre-boende-7.jpg', alt: 'LSS boende 7' },
-                { src: '../images/eldre-boende-8.jpg', alt: 'LSS boende 8' },
-                { src: '../images/eldre-boende-9.jpg', alt: 'LSS boende 9' },
-                { src: '../images/eldre-boende-10.jpg', alt: 'LSS boende 10' }
+                { src: '../images/eldre-boende-8.png', alt: 'LSS boende 8' },
+                { src: '../images/eldre-boende-9.png', alt: 'LSS boende 9' },
+                { src: '../images/eldre-boende-10.png', alt: 'LSS boende 10' }
             ],
             'gallery-6-images': [
                 { src: '../images/teater-1.jpg', alt: 'Teaterföreställning 1' },
@@ -261,8 +254,7 @@ $(document).ready(function () {
                 { src: '../images/tekniska-museet-4.JPG', alt: 'Tekniska Museet 4' }
             ],
             'gallery-9-images': [
-                { src: '../images/rengör-uppsala-1.jpg', alt: 'Rengör Uppsala del2 1' },
-                { src: '../images/rengör-uppsala-2.jpg', alt: 'Rengör Uppsala del2 2' },
+                { src: '../images/rengör-uppsala-2.png', alt: 'Rengör Uppsala del2 2' },
                 { src: '../images/rengör-uppsala-3.jpg', alt: 'Rengör Uppsala del2 3' },
                 { src: '../images/rengör-uppsala-4.jpg', alt: 'Rengör Uppsala del2 4' }
             ],
@@ -270,7 +262,6 @@ $(document).ready(function () {
                 { src: '../images/drake-1.jpg', alt: 'Flygdrake 1' },
                 { src: '../images/drake-2.jpg', alt: 'Flygdrake 2' },
                 { src: '../images/drake-3.jpg', alt: 'Flygdrake 3' },
-                { src: '../images/drake-5.jpg', alt: 'Flygdrake 5' },
                 { src: '../images/drake-6.JPG', alt: 'Flygdrake 6' }
             ]
         };
